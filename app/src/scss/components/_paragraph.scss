@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+.paragraph {
+  @include size(100%, null);
+  @include margin($contentDesktopMarginTop auto null);
+  @include padding(0 $desktopBufferHorizontal);
+  @include cjk-word-break;
+  box-sizing: border-box;
+  max-width: $contentwidth;
+  font-size: 20px;
+  line-height: 34px;
+  color: $black;
+
+  &+.paragraph--title {
+    @include margin($top: 54px);
+  }
+
+  &--title {
+    font-weight: bold;
+
+    &+.paragraph {
+      @include margin($top: 3px);
+    }
+  }
+
+  &--caption {
+    @include margin($top: 28px);
+    @include padding(0);
+    line-height: 36px;
+    color: $gray;
+  }
+}
+
+///
+@include mobile {
+  .paragraph {
+    @include margin($contentMobileMarginTop null null);
+    @include padding(0 $mobileBufferHorizontal);
+    font-size: 16px;
+    line-height: 28px;
+
+    &+.paragraph--title {
+      @include margin($top: 34px);
+    }
+
+    &--title+.paragraph {
+      @include margin($top: 2px);
+    }
+
+    &--caption {
+      @include margin($top: 22px);
+      @include padding(0);
+      line-height: inherit;
+    }
+  }
+}

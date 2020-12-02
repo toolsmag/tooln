@@ -1,0 +1,30 @@
+@charset "utf-8";
+
+#{$headerSelector} .location {
+  @include prefixer(flex, 0 1 auto, 'all');
+  font-family: $fontType2;
+  font-size: 46px;
+  text-align: center;
+  line-height: 1;
+  color: $white;
+
+  @include mobile {
+    display: none;
+  }
+}
+
+/// 어바웃 페이지
+#{$aboutPageSelector} .location {
+  color: $black;
+}
+
+/// 스크롤 되었을 때 변화
+#{$headerChangedSelector} .location {
+  color: $black;
+  @include prefixer(transition, color 1000ms $easeOutCubic);
+}
+
+/// GNB가 열린 상태
+#{$headerOpenedSelector} .location {
+  color: $black;
+}

@@ -1,0 +1,6 @@
+@charset "utf-8";
+
+#{$mainPageSelector} {
+  @import "./components/visual";
+  @import "./components/subject";
+}

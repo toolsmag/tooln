@@ -1,0 +1,81 @@
+@charset "UTF-8";
+
+.intro {
+  @include prefixer(display, box, 'webkit', 'value');
+  @include prefixer(display, flex, 'ms', 'value');
+  @include size(100%);
+  @include margin($contentDesktopMarginTop auto null);
+  @include padding(0 $desktopBufferHorizontal);
+  max-width: 1403px;
+  box-sizing: border-box;
+
+
+  &__meta {
+    @include prefixer(flex, 0 0 auto);
+    @include padding($right: 130px);
+    display: block;
+    font-family: $fontType2;
+    
+    .label {
+      font-size: 38px;
+      font-style: italic;
+
+      span {
+        @include prefixer(box-shadow, (0 1px 0 0 $bggray, 0 2px 0 0 $black), 'ms''webkit');
+      }
+
+      &+.credits {
+        @include margin(25px null null);
+      }
+    }
+
+    .credits {
+      font-size: 21px;
+      line-height: 30px;
+
+      strong {
+        @include margin(null 5px null null);
+      } 
+    }
+  }
+
+  &__summary {
+    @include prefixer(flex, 0 1 auto);
+    font-size: 20px;
+    line-height: 34px;
+    letter-spacing: -1px;
+    color: #323130;
+  }
+}
+
+@include mobile {
+  .intro {
+    @include margin($contentMobileMarginTop auto null);
+    @include padding(0 $mobileBufferHorizontal);
+    display: block;
+
+    &__meta {
+      @include padding($right: 0);
+
+      .label {
+        font-size: 23px;
+        font-style: italic;
+
+        &+.credits {
+          @include margin(17px null null);
+        }
+      }
+
+      .credits {
+        font-size: 18px;
+        line-height: 24px;
+      }
+    }
+
+    &__summary {
+      @include margin($top: 42px);
+      font-size: 16px;
+      line-height: 28px;
+    }
+  }
+}

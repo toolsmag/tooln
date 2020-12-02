@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko" class="page--main">
+
+<head>
+  <%= require("fs").readFileSync(htmlWebpackPlugin.options.HTML_PATH + "/head.html") %>
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- header -->
+    <%= require("fs").readFileSync(htmlWebpackPlugin.options.HTML_PATH + "/header.html") %>
+    <!-- // header -->
+
+    <!-- content -->
+    <div class="content">
+      <div class="container">
+
+        <!-- 비디오 영역 -->
+        <div class="container--visual">
+          <div id="visual" class="visual">
+            <div class="visual__inner">
+              <div id="visualVideoBox" class="visual__video-box">
+                <video id="visualVideo" class="video" width="320" height="176" autoplay muted loop playsinline>
+                  <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+                  <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg" />
+                </video>
+                <div id="videoMaskBox" class="mask">
+                  <!-- Mask Ref -->
+                  <svg>
+                    <defs>
+                      <mask id="visualVideoMaskRef">
+                        <rect id="videoMaskRefBg" x="0" y="0" fill="#ffffff" width="100%" height="100%" />
+                        <circle id="videoMaskTracker" cx="0" cy="0" r="0" fill="#000000" />
+                        <g id="videoMaskCircles" fill="#000000">
+                          <circle id="videoMaskCircleTemp" cx="0" cy="0" r="0" />
+                        </g>
+                      </mask>
+                    </defs>
+                    <rect id="visualVideoMask" fill="rgba(0,0,0,.85)" x="0" y="0" width="100%" height="100%"
+                      mask="url(#visualVideoMaskRef)" />
+                  </svg>
+                  <!-- //Mask Ref -->
+                </div>
+              </div>
+              <div class="visual__text-box">
+                <span class="title">How many tools<br />did you use today?</span>
+                <span class="desc">당신은 오늘 몇 가지의 도구를 사용했나요?</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- // 비디오 영역 -->
+
+        <!-- 주제 영역 -->
+        <div class="container--subject">
+          <div id="subject" class="subject">
+            <div class="subject__inner">
+              <div id="subjectTitle" class="subject__title">
+                <img src="<%=require('./src/img/main/main_subject_title.svg').default%>" alt="Narrative of Things" />
+              </div>
+              <div id="subjectBoxs" class="subject__boxs">
+                <div id="subjectBox1" class="subject__box subject__box--first">
+                  <div id="subjectImage1" class="subject__image subject__image--first">
+                    <img src="<%=require('./src/img/main/main_subject1.jpg').default%>" alt="" />
+                  </div>
+                  <div id="subjectText1" class="subject__text subject__text--first">
+                    <div class="title">
+                      We become what we behold. We shape<br />our tools and then our tools shape us.
+                    </div>
+                    <div class="desc">
+                      우리는 우리가 보는 대로 된다.<br class="view-pc" />우리는 도구를 만들고, 그 도구는 다시 우리를
+                      만든다.
+                    </div>
+                    <div class="desc desc--sub">
+                      <span class="view-pc"><span lang="ko">마샬 맥루한</span> Marshall Mcluhan</span>
+                      <span class="view-mo">Marshall Mcluhan <br><span lang="ko">마샬 맥루한</span></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="view-pc buffer"></div>
+                <div id="subjectBox2" class="subject__box subject__box--second">
+                  <div id="subjectImage2" class="subject__image subject__image--second">
+                    <img src="<%=require('./src/img/main/main_subject2.jpg').default%>" alt="" />
+                  </div>
+                  <div id="subjectText2" class="subject__text subject__text--second">
+                    <div class="title">Narrative of Things</div>
+                    <div class="desc">
+                      매거진 TOOLS는 1년에 두 번, 우리의 삶을 바꾼 도구를 선정하여 탐구합니다.<br class="view-pc" />
+                      일상 속 도구의 역사와 이야기, 그리고 우리 삶 속에서 도구가 지니게 될 의미를<br class="view-pc" />
+                      다양한 인물들과 브랜드의 목소리로 담아낸 잡지입니다.
+                    </div>
+                  </div>
+                </div>
+                <div class="view-pc buffer"></div>
+                <div id="subjectBox3" class="subject__box subject__box--third">
+                  <div id="subjectImage3" class="subject__image subject__image--third">
+                    <img src="<%=require('./src/img/main/main_subject3.jpg').default%>" alt="" />
+                  </div>
+                  <div id="subjectText3" class="subject__text subject__text--third">
+                    <div class="title">
+                      Thing that wash off every small piece of<br />bad news with faithful ritual.
+                    </div>
+                    <div class="desc desc--sub">첫 번째 도구 <span class="view-pc">비누</span></div>
+                    <div class="desc">
+                      누군가에겐 매일의 기분 좋은 향기로, 누군가에겐 자신의 세계관을 담은 작품으로,
+                      코로나를 이겨내는<br class="view-pc" />
+                      강력한 무기로 재조명되고 있는 비누. 매거진 TOOLS는 우리가 알고 있던 비누의
+                      풍부한 이야기를 통해<br class="view-pc" />
+                      일상을 새롭게 사유합니다.
+                    </div>
+                  </div>
+                </div>
+                <div class="view-pc buffer aaa"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- // 주제 영역 -->
+
+        <!-- 메인 아티클 영역 -->
+        <div class="container--banners">
+          <div class="banners">
+            <div class="banners__inner">
+              <div class="banner">
+                <a href="./article.html?temp">
+                  <span class="banner__inner">
+                    <span class="banner__thumb">
+                      <img class="view-pc" src="<%=require('./src/img/main/main_banner1.jpg').default%>" alt="" />
+                      <img class="view-mo" src="<%=require('./src/img/main/main_m_banner1.jpg').default%>" alt="" />
+                    </span>
+                    <span class="banner__info">
+                      <span class="label">Article</span>
+                      <span class="title"><span>가나다라마바사사</span></span>
+                      <span class="desc">
+                        누군가에겐 매일의 기분 좋은 향기로, 누군가에겐 자신의 세계관을 담은 작품으로,
+                        그리고 코로나를 이겨내는 강력한 무기로 재조명되고있는 비누. 매거진 TOOLS는
+                        우리가 알고 있던 비누의 풍부한 이야기를 통해 일상을 새롭게 사유합니다.
+                      </span>
+                      <span class="author"><strong>Editor</strong> Geunyoung Park</span>
+                      <span class="read view-mo">Read</span>
+                    </span>
+                  </span>
+                </a>
+              </div>
+              <div class="banner">
+                <a href="./article.html?temp">
+                  <span class="banner__inner">
+                    <span class="banner__thumb">
+                      <img class="view-pc" src="<%=require('./src/img/main/main_banner2.jpg').default%>" alt="" />
+                      <img class="view-mo" src="<%=require('./src/img/main/main_m_banner2.jpg').default%>" alt="" />
+                    </span>
+                    <span class="banner__info">
+                      <span class="label">Article</span>
+                      <span class="title"><span>가나다라마바사사</span></span>
+                      <span class="desc">
+                        누군가에겐 매일의 기분 좋은 향기로, 누군가에겐 자신의 세계관을 담은 작품으로,
+                        그리고 코로나를 이겨내는 강력한 무기로 재조명되고있는 비누. 매거진 TOOLS는
+                        우리가 알고 있던 비누의 풍부한 이야기를 통해 일상을 새롭게 사유합니다.
+                      </span>
+                      <span class="author"><strong>Editor</strong> Geunyoung Park</span>
+                      <span class="read view-mo">Read</span>
+                    </span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //메인 아티클 영역 -->
+
+        <!-- 서브 아티클 영역 -->
+        <div class="container--articles"></div>
+        <!-- //서브 아티클 영역 -->
+      </div>
+    </div>
+    <!-- // content -->
+    <!-- footer -->
+    <%= require("fs").readFileSync(htmlWebpackPlugin.options.HTML_PATH + "/footer.html") %>
+    <!-- // footer -->
+  </div>
+</body>
+
+</html>

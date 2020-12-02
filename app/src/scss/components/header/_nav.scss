@@ -1,0 +1,137 @@
+@charset "utf-8";
+
+#{$headerSelector} .nav {
+  @include position(absolute, 0 0 null null, $z-index:-1);
+  @include size(100vw, 0);
+  overflow: hidden;
+  box-sizing: border-box;
+
+  /// nav background
+  &:before {
+    @include position(absolute, $top:0, $right: 0, $z-index:-1);
+    background: $nenogreen;
+    content: '';
+
+    @include mobile {
+      @include size(0, 0);
+      @include prefixer(transform, translate3d(40%, -40%, 0));
+      border-radius: 50%;
+    }
+
+    @include desktop {
+      @include size(100%, 0);
+    }
+  }
+
+  &__volumes {
+    @include position(absolute, $top: 80px, $left:50%, $z-index: 1);
+    @include prefixer(transform, translateX(-50%), 'all');
+    display: none;
+    font-family: $fontType2;
+    font-style: italic;
+    font-size: 0;
+    text-align: center;
+
+    @include mobile {
+      display: block;
+    }
+  }
+
+  &__volume {
+    @include padding(null 5px);
+    display: inline-block;
+    font-size: 21px;
+  }
+
+  &__list {
+    @include position(relative);
+    @include size(100%, 100%);
+    @include padding(0 36px);
+    overflow: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+    text-align: center;
+    -webkit-overflow-scrolling: auto; /* Stops scrolling immediately */
+
+    @include mobile {
+      @include padding(150px null 50px);
+    }
+
+    @include desktop {
+      @include padding(#{$header-height-desktop/1.4} null);
+    }
+  }
+
+  &__item {
+    overflow: hidden;
+
+    a {
+      @include prefixer(transform, translate3d(0, 50%, 0));
+      display: inline-block;
+      font-weight: bold;
+      line-height: 1.85;
+      opacity: 0;
+
+      @include mobile {
+        font-size: 6vw;
+      }
+
+      @include desktop {
+        font-size: 48px;
+      }
+    }
+  }
+
+  &__dim-scroll {
+    @include position(absolute, null null 0 0);
+    @include size(100%, null);
+    @include bg-gradient(bottom, rgba($nenogreen, 1), rgba($nenogreen, .8), rgba($nenogreen, 0));
+    opacity: 0;
+
+    @include mobile {
+      @include size(null, 30vh);
+    }
+
+    @include desktop {
+      @include size(null, 20vh);
+    }
+  }
+}
+
+/// GNB가 열린 상태
+#{$headerOpenedSelector} .nav {
+  @include size(100vw, 100vh);
+
+  @include desktop {
+    @include padding($header-height-desktop null null);
+  }
+
+  &:before {
+    @include mobile {
+      @include size(400vh, 400vh);
+      @include prefixer(transition, (width 500ms ease-in, height 500ms ease-in), 'all');
+    }
+
+    @include desktop {
+      @include size(100vw, 100vh);
+      @include prefixer(transition, height 300ms ease-in);
+    }
+  }
+
+  &__item a {
+    @include prefixer(transform, translate3d(0, 0, 0));
+    opacity: 1;
+
+    @include mobile {
+      @include prefixer(transition, (transform 600ms 400ms $easeOutCubic, opacity 600ms 400ms $easeOutCubic));
+    }
+
+    @include desktop {
+      @include prefixer(transition, (transform 300ms 200ms $easeOutCubic, opacity 300ms 200ms $easeOutCubic));
+    }
+  }
+
+  &__dim-scroll {
+    @include prefixer(transition, opacity 500ms 300ms ease);
+  }
+}

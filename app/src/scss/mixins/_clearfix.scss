@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+/// :after 가상선택자로 float을 해제합니다.
+///
+///
+/// @example scss
+///   .element {
+///     @include clearfix;
+///   }
+///
+///   // CSS Output
+///   .element: after { 
+///     display: block;
+///     clear: both;
+///     content: "";
+///   }
+///
+
+@mixin clearfix() {
+  &:after { 
+    display: block; 
+    clear: both; 
+    content: '';
+  }
+}

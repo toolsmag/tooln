@@ -1,0 +1,61 @@
+@charset "utf-8";
+
+#{$headerSelector} {
+  @include position(fixed, 0 null null 0, $z-index: $z-header);
+  @include size(100vw, null);
+  box-sizing: border-box;
+
+  @include mobile {
+    @include padding(null $mobileBufferHorizontal);
+  }
+
+  @include desktop {
+    @include padding(null $desktopBufferHorizontal);
+  }
+
+  .container {
+    @include prefixer(display, flex, 'all', 'value');
+    @include prefixer(justify-content, space-between, ('webkit', 'ms'));
+    @include prefixer(align-self, start, ('webkit', 'ms'));
+    box-sizing: border-box;
+
+    @include mobile {
+      @include size(null, auto);
+      @include padding(19px null 19px);
+    }
+
+    @include desktop {
+      @include size(null, $header-height-desktop);
+      @include padding(44px null 38px);
+      @include border(bottom, 2px, solid, $white);
+    }
+  }
+}
+
+/// 어바웃 페이지
+#{$aboutPageSelector} #{$headerSelector} {
+  background: 0 !important;
+
+  .container {
+    border-color: $darkgray2;
+  }
+}
+
+/// 스크롤 되었을 때 변화
+#{$headerChangedSelector} {
+  background: $bggray;
+  @include prefixer(transition, background 300ms $easeOutCubic);
+
+  .container {
+    border-color: $darkgray2;
+    @include prefixer(transition, border-color 300ms $easeOutCubic);
+  }
+}
+
+/// GNB가 열린 상태
+#{$headerOpenedSelector} {
+  .container {
+    border-color: $black;
+    background: none;
+  }
+}

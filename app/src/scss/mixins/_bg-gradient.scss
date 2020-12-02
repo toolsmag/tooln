@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+@mixin bg-gradient($direction, $list...) {
+  $d: null;
+
+  background: -webkit-linear-gradient($direction, $list);
+  background: -moz-linear-gradient($direction, $list);
+  background: -ms-linear-gradient($direction, $list);
+  background: -o-linear-gradient($direction, $list);
+
+  @if $direction==top {
+    background: linear-gradient(to bottom, $list);
+  } @else if $direction==right {
+    background: linear-gradient(to left, $list);
+  } @else if $direction==bottom {
+    background: linear-gradient(to top, $list);
+  } @else if $direction==left {
+    background: linear-gradient(to right, $list);
+  } @else {
+    background: linear-gradient($direction, $list);
+  };
+}

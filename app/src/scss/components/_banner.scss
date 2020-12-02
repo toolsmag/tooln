@@ -1,0 +1,196 @@
+@charset "UTF-8";
+
+.banners {
+  @include position(relative, $z-index: 1);
+  @include padding(null $desktopBufferHorizontal);
+  background: $bggray;
+
+  .banners__inner {
+    @include margin(null auto);
+    max-width: $max-size;
+  }
+}
+
+.banner {
+  @include padding(24px 0);
+  border-top: 1px solid $black;
+
+  a {
+    @include position(relative);
+    @include padding($top: 42.047%);
+    display: block;
+    overflow: hidden;
+    text-decoration: none;
+  }
+
+  &__inner {
+    @include position(absolute, 0 null null 0);
+    @include size(100%);
+    display: block;
+  }
+
+  &__thumb {
+    @include position(relative);
+    @include size(null, 100%);
+    display: block;
+    float: left;
+
+    &:after {
+      @include position(absolute, 0);
+      display: none;
+      background: rgba($black, 0.1);
+      content: '';
+    }
+
+    &:hover {
+      &:after {
+        display: block;
+      }
+    }
+
+    img {
+      @include size(auto, 100%);
+      max-height: 100%;
+    }
+  }
+
+  &__info {
+    @include padding(0 18px);
+    display: block;
+    overflow: hidden;
+    font-size: 10px;
+
+    &:hover {
+      .title span {
+        @include prefixer(box-shadow, (0 2px 0 0 $bggray, 0 3px 0 0 $black), 'webkit');
+      }
+    }
+
+    .label {
+      @include margin($bottom: 1.444em);
+      display: block;
+      font-size: 1.8em;
+    }
+
+    .title {
+      @include margin($bottom: 0.921em);
+      display: block;
+      overflow: hidden;
+      font-size: 3.8em;
+
+      span {
+        @include prefixer(box-shadow, (0 2px 0 0 $bggray, 0 3px 0 0 $bggray), 'webkit');
+      }
+    }
+
+    .desc {
+      display: block;
+      @include margin($bottom: 1.636em);
+      font-size: 2em;
+      line-height: 1.636em;
+    }
+
+    .author {
+      display: block;
+      font-family: $fontType2;
+      font-size: 1.8em;
+    }
+  }
+}
+
+/* **************************************** */
+// 테블릿
+/* **************************************** */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .banner {
+    &__info {
+      font-size: 8px;
+    }
+  }
+}
+
+/* **************************************** */
+// 모바일 
+/* **************************************** */
+@include mobile {
+  .banners {
+    @include padding(null $mobileBufferHorizontal);
+    @include size(100%, null);
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .banner {
+    @include padding(10px null);
+    @include padding(0 0 50px);
+    border-top: 0;
+
+    a {
+      @include padding($top: 0);
+      overflow: visible;
+    }
+
+    &__inner {
+      @include position(relative);
+    }
+
+    &__thumb {
+      float: initial;
+      @include size(100%, auto);
+
+      &:after {
+        @include size(calc(100% + 18px), null);
+      }
+
+      img {
+        @include size(calc(100% + #{$mobileBufferHorizontal}), auto);
+        max-height: calc(100% + #{$mobileBufferHorizontal});
+
+        // @include size(100%, auto);
+        // max-height: 100%;
+      }
+    }
+
+    &__info {
+      @include position(relative, $z-index:1);
+      @include padding(null 0);
+      overflow: visible;
+
+      .label {
+        display: none;
+      }
+
+      .title {
+        @include margin(-0.3em null 0.714em);
+        font-size: 3.5em;
+        font-weight: bold;
+        line-height: 1;
+
+        span {
+          @include prefixer(box-shadow, (0 2px 0 0 $bggray, 0 3px 0 0 $bggray), 'webkit');
+        }
+      }
+
+      .desc {
+        @include margin($bottom: 0.875em);
+        // font-size: 1.6em;
+        // line-height: 1.563em;
+        font-size: 20px;
+        line-height: 35px;
+      }
+
+      .author {
+        display: none;
+      }
+
+      .read {
+        display: block;
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  ///
+}

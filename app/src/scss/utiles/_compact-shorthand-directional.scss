@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+/// 나열된 값을 가장 짧은 형태의 단축속성값으로 변환합니다
+///
+/// @argument {list} $values
+///   값 리스트
+///
+/// @example scss
+///   $values: _compact-shorthand-directional(10px 20px 10px 20px);
+///
+///   // Output
+///   $values: 10px 20px;
+///
+/// @return {list}
+///
+/// @access private
+///
+
+@function _compact-shorthand-directional($values) {
+  $shorthand: null;
+
+  $t: nth($values, 1);
+  $r: if(length($values) < 2, $t, nth($values, 2));
+  $b: if(length($values) < 3, $t, nth($values, 3));
+  $l: if(length($values) < 2, $t, nth($values, if(length($values) < 4, 2, 4)));
+
+  @if $t == 0 { $t: 0; }
+  @if $r == 0 { $r: 0; }
+  @if $b == 0 { $b: 0; }
+  @if $l == 0 { $l: 0; }
+
+  @if $t == $r and $t == $b and $t == $l { $shorthand: $t;          }
+  @else if $t == $b and $r == $l         { $shorthand: $t $r;       }
+  @else if $r == $l                      { $shorthand: $t $r $b;    }
+  @else                                  { $shorthand: $t $r $b $l; }
+
+  @return $shorthand;
+}

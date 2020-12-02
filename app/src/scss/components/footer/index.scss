@@ -1,0 +1,200 @@
+@charset "utf-8";
+
+.footer {
+  @include position(relative);
+  @include padding(120px $desktopBufferHorizontal null);
+  min-height: 256px;
+  background: $bggray;
+
+  .container {
+    @include prefixer(display, box, 'webkit', 'value');
+    @include prefixer(display, flex, 'ms', 'value');
+    @include padding(50px null);
+    border-top: 1px solid $black;
+  }
+
+  &__logo {
+    flex: 0 0 auto;
+
+    .logo {
+      @include size(164px, 43px);
+
+      img {
+        @include size(100%, auto);
+      }
+    }
+
+    .copy {
+      display: block;
+      margin-top: 33px;
+      font-family: $fontType1;
+      font-size: 16px;
+      letter-spacing: -1px;
+      white-space: nowrap;
+    }
+  }
+
+  &__connects {
+    flex: 1 1 0;
+    @include margin($top: -9px);
+    @include padding(0 90px);
+
+    p {
+      font-size: 18px;
+      line-height: 32px;
+
+      &.tels {
+        @include margin($top: 13px);
+      }
+    }
+
+    span {
+      @include margin($right: 38px);
+      display: inline-block;
+    }
+
+    strong {
+      font-weight: normal;
+    }
+  }
+
+  &__links {
+    flex: 0 0 auto;
+
+    ul {
+      &:after {
+        display: block;
+        clear: both;
+        content: '';
+      }
+    }
+
+    li {
+      float: left;
+
+      &:nth-child(2n) {
+        margin-left: 80px;
+      }
+    }
+
+    a {
+      @include prefixer(box-shadow, (0 1px 0 0 $bggray, 0 2px 0 0 $black), 'ms''webkit');
+      font-family: $fontType1;
+      font-size: 32px;
+      text-decoration: none;
+
+      &:hover {
+        @include prefixer(box-shadow, (0 1px 0 0 $bggray, 0 2px 0 0 $bggray), 'ms''webkit');
+      }
+    }
+  }
+
+}
+
+@media screen and (min-width: 769px) and (max-width: 1100px) {
+  .footer {
+    &__logo {
+      .logo {
+        @include size(115px, null);
+      }
+
+      .addr {
+        @include margin($top: 2px);
+      }
+    }
+
+    &__connects {
+      @include padding(null 50px);
+
+      p {
+        font-size: 16px;
+
+        &:last-child {
+          @include margin($top:27px);
+        }
+      }
+    }
+
+    &__links {
+      li {
+        float: inherit;
+
+        +li {
+          @include margin($top:30px);
+        }
+
+        &:nth-child(2n) {
+          @include margin($left: 0);
+        }
+      }
+      a {
+        font-size: 25px;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .footer {
+    @include padding(30px $mobileBufferHorizontal null);
+
+    .container {
+      flex-direction: column-reverse;
+    }
+
+    &__logo {
+      @include margin(40px null null);
+
+      .logo {
+        @include size(105px, 28px);
+      }
+
+      .addr {
+        @include margin(10px null null);
+        font-size: 14px;
+        letter-spacing: 0;
+      }
+    }
+
+    &__connects {
+      @include margin(45px null null);
+      @include padding(null 0);
+
+      p {
+        @include margin($top:0);
+        font-size: 16px;
+        line-height: 25px;
+
+        &:last-child {
+          @include margin($top:10px);
+        }
+      }
+
+      span {
+        display: block;
+      }
+
+      strong {
+        font-weight: bold;
+      }
+    }
+
+    &__links {
+      li {
+        float: inherit;
+
+        +li {
+          @include margin($top:30px);
+        }
+
+        &:nth-child(2n) {
+          @include margin($left:0);
+        }
+
+        a {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}

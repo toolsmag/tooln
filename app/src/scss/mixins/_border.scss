@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+@mixin border($direction: null, $width: null, $style: null, $color: null) {
+  @if $direction=='top' {
+    border-#{$direction}: $width $style $color;
+  }
+
+  @else if $direction=='right' {
+    border-#{$direction}: $width $style $color;
+  }
+
+  @else if $direction=='bottom' {
+    border-#{$direction}: $width $style $color;
+  }
+
+  @else if $direction=='left' {
+    border-#{$direction}: $width $style $color;
+  }
+
+  @else {
+    border: $direction $width $style;
+  }
+}
+
+// @mixin border(
+//   $values: null, 
+//   $top   : null, 
+//   $right : null, 
+//   $bottom: null, 
+//   $left  : null
+// ) {
+//   $values: _extend-shorthand-directional($values, ($top $right $bottom $left));
+//   @include _directional-property(border, null, $values);
+// }

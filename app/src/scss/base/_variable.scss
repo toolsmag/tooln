@@ -1,0 +1,57 @@
+@charset "utf-8";
+
+/// colors
+$black: #000;
+$white: #fff;
+$darkgray: #323130;
+$darkgray2: #212122;
+$gray:#808080;
+$bggray: #f6f4f0;
+$nenogreen: #d9f91c;
+
+/// class Selector
+$headerSelector: '.header';
+$headerOpenedSelector: '.header[data-js-expanded=true]';
+$headerChangedSelector: '.header[data-js-changed=true]';
+$footerSelector: '.footer';
+$mainPageSelector: '.page--main';
+$aboutPageSelector: '.page--about';
+$articlePageSelector: '.page--article';
+
+$desktopBufferVertical: 3.229166666666667%;
+$desktopBufferHorizontal: 63px;
+$mobileBufferVertical: 18px;
+$mobileBufferHorizontal: 18px;
+
+/// header height
+$header-height-mobile: 48px;
+$header-height-desktop: 116px;
+
+/// max-width
+$max-size: 1446px;
+
+/// Breakpoints
+$breakpointMobile: 768px;
+$breakpointDesktop: 769px;
+$breakpointMinTablet: 769px;
+$breakpointMaxTablet: 1200px;
+
+/// zindex
+$z-header: 100;
+$z-footer: $z-header;
+
+/// asset url list
+// $p-logo-tooln: '../img/logo_tooln.svg';
+// $p-logo-blank: '../img/logo_blank.svg';
+// $icon-index: '../img/icon_index.svg';
+$icon-mouse-over: '../img/common/icon_mouser_over.png';
+$icon-arrow-bottom: '../img/common/icon_arrow_bottom.svg';
+
+/// asset font names
+$fontBase: "Apple Gothic", "HY Gulim", "MalgunGothic", "HY Dotum", "Lexi Gulim", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$fontType1:"AkzidenzGrotesk-Regular";
+$fontType2:"WarnockPro"; // 볼드 I
+// $fontType3: "WarnockPro";
+
+/// easings
+$easeOutCubic: cubic-bezier(0.33, 1, 0.68, 1);

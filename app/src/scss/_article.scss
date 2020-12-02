@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+#{$articlePageSelector} {
+  $contentwidth: 1080px;
+  $contentDesktopMarginTop: 90px;
+  $contentMobileMarginTop: 44px;
+
+  .write {
+    @include position(relative);
+    @include margin($top:100vh);
+    overflow: hidden;
+    background-color: $bggray;
+
+    @include mobile {
+      @include margin($top:0);
+    }
+  }
+  
+  @import "./components/cover";
+  @import "./components/gallery";
+  @import "./components/intro";
+  @import "./components/paragraph";
+  @import "./components/picture";
+  @import "./components/related";
+}

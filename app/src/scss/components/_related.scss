@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+.related {
+  @include position(relative, $z-index:1);
+  @include padding($top: 110px);
+  background: $bggray;
+
+  &__title {
+    font-family: $fontType1;
+    font-size: 32px;
+    font-weight: normal;
+    text-align: center;
+  }
+
+  &__title+.articles {
+    @include margin($top: 40px);
+  }
+
+  .article {
+    display: block;
+  }
+}
+
+@include mobile {
+  .related {
+    @include padding($top: 95px);
+
+    &__title {
+      font-size: 21px;
+    }
+
+    &__title+.articles {
+      @include margin($top: 28px);
+    }
+
+    .articles .container {
+      box-shadow: initial;
+    }
+
+    .article {
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}

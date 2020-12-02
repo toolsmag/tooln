@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+/// Vendor prefixes를 속성명 혹은 속성값 앞에 붙여줍니다.
+///
+/// @argument {string} $property
+///   CSS Property(속성명)
+///
+/// @argument {string} $value
+///   적용할 CSS Value.
+///
+/// @argument {string | list} $prefixes
+///   필요한 Vendor prefixes. 
+///   "all" >> webkit, moz, ms, o 모든 Vendor prefixes가 필요한 경우
+///   ("webkit", "moz") >> 특정 Vendor prefixes만 필요할 경우 
+///
+/// @argument {string} $type 
+///   Vendor prefixes를 속성명에 붙일지 속성값에 붙일지 결정.
+///   
+///
+/// @example scss
+///   .element {
+///     @include prefixer(appearance, none, ("webkit", "moz"));
+///   }
+///
+///   // CSS Output
+///   .element {
+///     -webkit-appearance: none;
+///     -moz-appearance: none;
+///     appearance: none;
+///   }
+///
+
+@mixin prefixer($property,
+  $value,
+  $prefixes: ("webkit"),
+  $type: "key"
+
+) {
+  @if ($prefixes=="all") {
+    $prefixes: ("webkit", "moz", "ms", "o");
+  }
+
+  // 속성값에만 prefix 적용
+  @if ($type=="value") {
+    @each $prefix in $prefixes {
+      #{$property}: #{"-" + $prefix + "-" + $value};
+    }
+  }
+
+  // 속성명에만 prefix 적용
+  @else {
+    @each $prefix in $prefixes {
+      #{"-" + $prefix + "-" + $property}: $value;
+    }
+
+  }
+
+  #{$property}: $value;
+}

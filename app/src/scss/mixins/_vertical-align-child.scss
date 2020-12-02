@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+/// 자식요소들의 수직 중앙 정렬을 위한 CSS를 제공합니다.
+///
+///
+/// @example scss
+///   .element {
+///     @include vertical-align-child;
+///   }
+///
+///   // CSS Output
+///   .element {
+///     white-space: nowrap;
+///   }
+///   .element:after {
+///     display: inline-block;
+///     width: 0;
+///     height: 100%;
+///     vertical-align: middle;
+///     content:'';
+///   }
+///
+
+@mixin vertical-align-child() {
+  white-space: nowrap;
+  &:after {
+    display: inline-block;
+    width: 0;
+    height: 100%;
+    vertical-align: middle;
+    content: '';
+  }
+}

@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+.picture {
+  @include size(100%, null);
+  @include margin($contentDesktopMarginTop auto null);
+  @include padding(0 $desktopBufferHorizontal);
+  box-sizing: border-box;
+  max-width: 774px;
+  font-size: 0;
+
+  &--wide {
+    max-width: $contentwidth;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+///
+@include mobile {
+  .picture {
+    @include margin($contentMobileMarginTop null null);
+    @include padding(0 $mobileBufferHorizontal);
+
+    &--wide {
+      img {
+        @include margin(0 #{$mobileBufferHorizontal * -1});
+        width: calc(100% + #{$mobileBufferHorizontal * 2});
+        max-width: calc(100% + #{$mobileBufferHorizontal * 2});
+      }
+    }
+  }
+}

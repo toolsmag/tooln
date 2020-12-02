@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+/// animation 속성에 vendor prefix를 붙여준다.
+///
+/// @argument {list} $values
+///   축약형 animation 속성값
+///
+/// @example scss
+///   .element {
+///     @include animation(animationName 2s linear, animationName2 100ms);
+///   }
+///
+///   // CSS Output
+///   .element { 
+///     -webkit-animation: animationName 2s linear, animationName2 100ms;
+///     animation: animationName 2s linear, animationName2 100ms;
+///   }
+///
+/// @require {function} _extend-shorthand-directional
+///
+
+@mixin animation($value...) {
+  $length: length($value);
+  $values: '';
+  
+  @for $index from 1 through $length {
+    $values: #{$values + nth($value, $index)};
+
+    @if $index < $length {
+      $values: #{$values + ", "};
+    }
+  }
+  
+  @include prefixer(animation, $values);  
+}

@@ -1,0 +1,51 @@
+{
+  "initLength": 3,
+  "moreLength": 6,
+  "list": [
+    {
+      "id": "a1",
+      "type": "type2",
+      "label": "Interview",
+      "title": "비누의 요원한 얼굴<br><strong>구본창 작가</strong>",
+      "link": "./article.html?temp",
+      "description": "닳고 마른 비누가 희고 깨끗한 배경 가운데 누워 있다. 얼마나 오래된 비누인 지 짐작하기 어려운 것은 이 배경 때문이다. 언제나처럼, 비누는 흘러간 생을 담담히 보내고 내일의 미지를 기다리는 와중이다. 사진가 구본창은 2004년 부터 2007년까지 비누 연작 시리즈를 집중적으로 이어갔다.",
+      "imageURL": "./src/img/article/thumbnails/article01.jpg"
+    },
+    {
+      "id": "a2",
+      "type": "type1",
+      "label": "Interview",
+      "title": "비누의 요원한 얼굴<br><strong>구본창 작가</strong>",
+      "link": "./article.html?temp",
+      "description": "닳고 마른 비누가 희고 깨끗한 배경 가운데 누워 있다. 얼마나 오래된 비누인 지 짐작하기 어려운 것은 이 배경 때문이다. 언제나처럼, 비누는 흘러간 생을 담담히 보내고 내일의 미지를 기다리는 와중이다. 사진가 구본창은 2004년 부터 2007년까지 비누 연작 시리즈를 집중적으로 이어갔다.",
+      "imageURL": "./src/img/article/thumbnails/article01.jpg"
+    },
+    {
+      "id": "a3",
+      "type": "type1",
+      "label": "Interview",
+      "title": "비누의 요원한 얼굴<br><strong>구본창 작가</strong>",
+      "link": "./article.html?temp",
+      "description": "닳고 마른 비누가 희고 깨끗한 배경 가운데 누워 있다. 얼마나 오래된 비누인 지 짐작하기 어려운 것은 이 배경 때문이다. 언제나처럼, 비누는 흘러간 생을 담담히 보내고 내일의 미지를 기다리는 와중이다. 사진가 구본창은 2004년 부터 2007년까지 비누 연작 시리즈를 집중적으로 이어갔다.",
+      "imageURL": "./src/img/article/thumbnails/article01.jpg"
+    },
+    {
+      "id": "a4",
+      "type": "type1",
+      "label": "Interview",
+      "title": "비누의 요원한 얼굴<br><strong>구본창 작가</strong>",
+      "link": "./article.html?temp",
+      "description": "닳고 마른 비누가 희고 깨끗한 배경 가운데 누워 있다. 얼마나 오래된 비누인 지 짐작하기 어려운 것은 이 배경 때문이다. 언제나처럼, 비누는 흘러간 생을 담담히 보내고 내일의 미지를 기다리는 와중이다. 사진가 구본창은 2004년 부터 2007년까지 비누 연작 시리즈를 집중적으로 이어갔다.",
+      "imageURL": "./src/img/article/thumbnails/article01.jpg"
+    },
+    {
+      "id": "a5",
+      "type": "type1",
+      "label": "Interview",
+      "title": "비누의 요원한 얼굴<br><strong>구본창 작가</strong>",
+      "link": "./article.html?temp",
+      "description": "닳고 마른 비누가 희고 깨끗한 배경 가운데 누워 있다. 얼마나 오래된 비누인 지 짐작하기 어려운 것은 이 배경 때문이다. 언제나처럼, 비누는 흘러간 생을 담담히 보내고 내일의 미지를 기다리는 와중이다. 사진가 구본창은 2004년 부터 2007년까지 비누 연작 시리즈를 집중적으로 이어갔다.",
+      "imageURL": "./src/img/article/thumbnails/article01.jpg"
+    }
+  ]
+}

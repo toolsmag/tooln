@@ -1,0 +1,6 @@
+@charset "utf-8";
+
+@mixin cjk-word-break {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}

@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+/// 리스트가 비여있는지 체크합니다
+///
+/// @argument {list} $list
+///   확인할 목록
+///
+/// @return {boolean}
+///
+/// @access private
+///
+/// @author thoughtbot "A Lightweight Sass Tool Set https://www.bourbon.io/"
+
+@function _contains-falsy($list) {
+  @each $item in $list {
+    @if not $item {
+      @return true;
+    }
+  }
+
+  @return false;
+}

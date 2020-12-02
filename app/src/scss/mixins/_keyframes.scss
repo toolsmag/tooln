@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+/// keyframes 속성에 vendor prefix를 붙여준다.
+///
+/// @argument {list} $name
+///   keyframes 이름
+///
+/// @example scss
+///     @include keyframes(animationName) {
+///       from {
+///         margin-left: 100%;
+///         width: 300%;
+///       }
+///       
+///       to {
+///         margin-left: 0%;
+///         width: 100%;
+///       }
+///     };
+///
+///   // CSS Output
+///     @-webkit-keyframes animationName {
+///       from {
+///         margin-left: 100%;
+///         width: 300%;
+///       }
+///       
+///       to {
+///         margin-left: 0%;
+///         width: 100%;
+///       }
+///     };
+///
+///     @keyframes animationName {
+///       from {
+///         margin-left: 100%;
+///         width: 300%;
+///       }
+///       
+///       to {
+///         margin-left: 0%;
+///         width: 100%;
+///       }
+///     };
+///
+///
+
+@mixin keyframes($name) {   
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}

@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+/// 간결할게 요소의 여백을 설정할 수 있도록 도와줍니다.
+///
+///
+/// @argument {list} $values
+///   margin의 단축형 값
+///
+/// @argument {number} $top
+///   margin-top 값
+///
+/// @argument {number} $right
+///   margin-right 값
+///
+/// @argument {number} $bottom
+///   margin-bottom 값
+///
+/// @argument {number} $left
+///   margin-left 값
+///   
+///
+/// @example scss
+///   .element {
+///     @include margin(null 20px 30px);
+///   }
+///   .element2 {
+///     @include margin(20px 30px, $left: 5px);
+///   }
+///
+///   // CSS Output
+///   .element {
+///     margin-right: 20px;
+///     margin-bottom: 30px;
+///     margin-left:20px;
+///   }
+///   .element2 {
+///     margin: 20px 30px 20px 10px;
+///   }
+///
+/// @require {function} _extend-shorthand-directional
+///
+/// @require {function} _directional-property
+///
+
+@mixin margin(
+  $values: null,
+  $top   : null,
+  $right : null,
+  $bottom: null,
+  $left  : null
+) {
+  $values: _extend-shorthand-directional($values, ($top $right $bottom $left));
+  @include _directional-property(margin, null, $values);
+}

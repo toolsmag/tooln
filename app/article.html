@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko" class="page--article">
+
+<head>
+  <%= require("fs").readFileSync(htmlWebpackPlugin.options.HTML_PATH + "/head.html") %>
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- header -->
+    <%= require("fs").readFileSync(htmlWebpackPlugin.options.HTML_PATH + "/header.html") %>
+    <!-- // header -->
+
+    <!-- content -->
+    <div class="content">
+      <div class="container">
+        <div class="cover"></div>
+        <div class="write"></div>
+        <div class="related" style="display: none">
+          <h3 class="related__title">Related Article</h3>
+        </div>
+      </div>
+    </div>
+    <!-- // content -->
+    
+    <!-- footer -->
+    <%= require("fs").readFileSync(htmlWebpackPlugin.options.HTML_PATH + "/footer.html") %>
+    <!-- // footer -->
+  </div>
+</body>
+
+</html>

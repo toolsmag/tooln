@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+/// 두개의 방향성 리스트값을 첫번째 아규먼트 기준으로 두번째값을 덮어쓴다(오버라이딩)
+///
+/// @argument {list} $shorthand1
+///   기준 속성값.
+///
+/// @argument {list} $shorthand2
+///   덮어쓸 속성값.
+///
+///
+/// @example scss
+///   .element {
+///     $value1: _extend-shorthand-directional((auto null), ($t:10px);
+///     $value2: _extend-shorthand-directional((10px 30px 10px), ($t:1px);
+///   }
+///
+///   // CSS Output
+///   .element {
+///     $value1-top: 10px;
+///     $value1-bottom: auto;
+///     $value2: 1px 30px 10px;
+///   }
+///
+/// @require {function} _unpack-shorthand-directional
+///
+///
+/// @access private
+///
+
+@function _extend-shorthand-directional(
+  $shorthand1, 
+  $shorthand2
+) {
+  $t: null;
+  $r: null;
+  $b: null;
+  $l: null;
+
+  $shorthand1: _unpack-shorthand-directional($shorthand1);
+  $shorthand2: _unpack-shorthand-directional($shorthand2);
+
+  $t: if(nth($shorthand2, 1) != null, nth($shorthand2, 1), nth($shorthand1, 1));
+  $r: if(nth($shorthand2, 2) != null, nth($shorthand2, 2), nth($shorthand1, 2));
+  $b: if(nth($shorthand2, 3) != null, nth($shorthand2, 3), nth($shorthand1, 3));
+  $l: if(nth($shorthand2, 4) != null, nth($shorthand2, 4), nth($shorthand1, 4));
+
+  @return ($t $r $b $l);
+}

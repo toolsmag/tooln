@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+/// position을 한줄로 간결할게 사용할 수 있도록 도와줍니다.
+///
+/// @argument {string} $position
+///   적용할 CSS position값.
+///
+/// @argument {list} $values
+///   position의 상하좌우 좌표값 리스트
+///
+/// @argument {number} $z-index
+///   position z-index 값
+///
+/// @argument {number} $top
+///   position top 값
+///
+/// @argument {number} $right
+///   position right 값
+///
+/// @argument {number} $bottom
+///   position bottom 값
+///
+/// @argument {number} $left
+///   position left 값
+///
+///
+/// @example scss
+///   .element {
+///     @include position(absolute, $top: 50%, $left: 50%);
+///   }
+///
+///   // CSS Output
+///   .element: after { 
+///     position: absolute;
+///     top: 50%;
+///     left: 50%;
+///   }
+///
+/// @require {function} _extend-shorthand-directional
+///
+
+@mixin position(
+  $position: null,
+  $values  : null,
+  $z-index : null,
+  $top     : null,
+  $right   : null,
+  $bottom  : null,
+  $left    : null
+) {
+  $values: _extend-shorthand-directional($values, ($top $right $bottom $left));
+
+  position: $position;
+  top     : nth($values, 1);
+  right   : nth($values, 2);
+  bottom  : nth($values, 3);
+  left    : nth($values, 4);
+  z-index : $z-index;
+}

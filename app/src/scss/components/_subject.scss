@@ -1,0 +1,296 @@
+@charset "UTF-8";
+
+.subject {
+  @include padding(140px $desktopBufferHorizontal 160px);
+  position: relative;
+  background: $bggray;
+
+  &__title {
+    @include margin(0 auto);
+    display: block;
+    max-width: 1800px;
+  }
+
+  &__boxs {
+    @include margin(140px auto 0);
+    max-width: $max-size;
+
+    .buffer {
+      @include padding($top: 15%);
+    }
+  }
+
+  /// 박스
+  &__box {
+    @include position(relative);
+    @include margin($top: 11.820199778024417%);
+
+    &:after {
+      display: block;
+      clear: both;
+      content: '';
+    }
+
+    // 첫번째 박스
+    &--first {
+      .scrollmagic-pin-spacer {
+        max-width: 834px !important;
+        max-height: 1250px !important;
+      }
+    }
+
+    // 두번째 박스
+    &--second {
+      @include margin($top: -7.60266%);
+    }
+
+    // 세번째 박스
+    &--third {
+      @include margin($top: 10.549389567147614%);
+    }
+  }
+
+  /// 이미지
+  &__image {
+    @include position(relative);
+    overflow: hidden;
+    box-sizing: border-box;
+
+    img {
+      @include position(absolute, 0 null null 0);
+      @include size(100%, auto);
+    }
+
+    // 첫번째 이미지
+    &--first {
+      @include size(57.6%, 81.09375vw);
+      max-width: 834px !important;
+      max-height: 1250px !important;
+      margin: 0 !important;
+    }
+
+    // 두번째 이미지
+    &--second {
+      @include size(40.62153163152053%, null);
+      @include padding($top: 38.59060402684564%);
+      float: right;
+      max-width: 586px !important;
+    }
+
+    // 세번째 이미지
+    &--third {
+      @include size(74.47280799112097%, null);
+      @include margin(null auto);
+      @include padding($top: 49.12751677852349%);
+      max-width: 1077px !important;
+    }
+  }
+
+  /// 텍스트
+  &__text {
+    color: $darkgray;
+    letter-spacing: -1px;
+    
+    .title {
+      font-family: $fontType2;
+      font-size: 56px;
+      font-weight: bold;
+      font-style: italic;
+      line-height: 1.04;
+    }
+
+    .desc {
+      @include margin($top: 2.8%);
+      font-family: $fontBase;
+      font-size: 22px;
+      line-height: 1.63;
+
+      &--sub {
+        @include margin($top: 2.2%);
+        font-family: $fontType2;
+        font-weight: bold;
+        line-height: 1.44;
+
+        span[lang=ko] {
+          font-family: $fontBase;
+          font-size: 20px;
+        }
+      }
+    }
+
+    // 첫번째 텍스트
+    &--first {
+      @include position(absolute, 58% null null 39%);
+    }
+
+    // 두번째 텍스트
+    &--second {
+      @include position(absolute, 55% 42.4% null null);
+      letter-spacing: -2px;
+      text-align: right;
+    }
+
+    // 세번째 텍스트
+    &--third {
+      @include position(relative, $z-index: 1);
+      @include margin($top: -2%);
+      text-align: center;
+      letter-spacing: -2px;
+
+      .desc {
+        &--sub {
+          @include margin($top: 3%);
+          font-family: $fontBase;
+        }
+      }
+    }
+
+    //
+  }
+}
+
+/* **************************************** */
+// 테플릿
+/* **************************************** */
+@include tablet {
+  .subject {
+
+    .title {
+      font-size: 3vw;
+    }
+
+    .desc {
+      font-size: 15px;
+
+      &--sub {
+        span[lang=ko] {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+/* **************************************** */
+// 모바일 
+/* **************************************** */
+@include mobile {
+  .subject {
+    @include padding(12.1% $mobileBufferHorizontal 20%);
+
+    &__boxs {
+      @include margin($top:14%)
+    }
+
+    /// 모바일 박스
+    &__box {
+
+      // 첫번째 박스
+      &--first,
+      &--second,
+      &--third {
+        @include margin($top: 14%);
+      }
+    }
+
+    /// 모바일 이미지
+    &__image {
+
+      // 모바일 첫번째 이미지
+      &--first {
+        @include size(100%, null);
+        @include padding($top: 150.0777%);
+      }
+
+      // 모바일 두번째 이미지
+      &--second {
+        @include size(100%, null);
+        @include padding($top: 97.9505617977528%);
+        float: none;
+        max-width: 100% !important;
+      }
+
+      // 모바일 세번째 이미지
+      &--third {
+        @include size(100%, null);
+        @include margin(initial);
+        @include padding($top: 136.29283489096574%);
+
+        img {
+          @include position(absolute, $top: 50%, $left: 50%);
+          @include prefixer(transform, translate3d(-50%, -50%, 0), 'all');
+          @include size(auto, 100%);
+        }
+      }
+    }
+
+    /// 모바일 텍스트
+    &__text {
+      @include margin($top: -5%);
+      text-align: center;
+
+      br {
+        display: none;
+      }
+
+      .title {
+        font-size: 8.33vw;
+        line-height: 1.16;
+      }
+
+      .desc {
+        @include margin($top: 6.69781%);
+        font-size: 4.4vw;
+        line-height: 1.6;
+
+        &--sub {
+          @include margin($top: 5.9190031%);
+          font-size: 4.44vw;
+          line-height: 1.515;
+
+          span[lang=ko] {
+            font-size: 4.16vw;
+          }
+        }
+      }
+
+      // 모바일 첫번째 텍스트
+      &--first {
+        @include position(relative, 0, $z-index: 1);
+
+        .desc {
+          @include margin(null 18%);
+
+          &--sub {
+            @include margin(null auto);
+          }
+        }
+      }
+
+      // 모바일 두번째 텍스트
+      &--second {
+        @include position(relative, 0, $z-index: 1);
+        letter-spacing: 0;
+        text-align: center;
+      }
+
+      // 모바일 세번째 텍스트
+      &--third {
+        text-align: center;
+        letter-spacing: 0;
+
+        .desc {
+          &--sub {
+            @include margin($top: 6.69781%);
+            font-size: 4.4vw;
+            font-weight: bold;
+          }
+        }
+      }
+
+      //
+    }
+
+    //
+  }
+}

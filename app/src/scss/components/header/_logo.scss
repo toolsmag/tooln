@@ -1,0 +1,66 @@
+@charset "utf-8";
+
+#{$headerSelector} .logo {
+  @include size(226px, 34px);
+  @include prefixer(flex, 0 0 auto, 'all');
+
+  @include mobile {
+    @include size(130px, $mobileBufferHorizontal);
+  }
+
+  a {
+    @include size(100%);
+    display: block;
+    background: 0 0 no-repeat;
+    background-size: 100% auto;
+  }
+
+  .icon-logo {
+    @include size(auto, 100%);
+    overflow: visible;
+    fill: $white;
+    // @include prefixer(filter, drop-shadow(0 1px 2px rgba(0, 0, 0, .2)), 'all');
+
+    .st1 {
+      fill: none;
+      stroke: $white;
+      stroke-width: 1.863;
+      stroke-miterlimit: 10;
+    }
+  }
+}
+
+/// 어바웃 페이지
+#{$aboutPageSelector} .logo {
+  .icon-logo {
+    fill: $darkgray2;
+    
+    .st1 {
+      stroke: $darkgray2;
+    }
+  }
+}
+
+/// 스크롤 되었을 때 변화
+#{$headerChangedSelector} .logo {
+  .icon-logo {
+    @include prefixer(transition, fill 1000ms $easeOutCubic);
+    fill: $darkgray2;
+    
+    .st1 {
+      stroke: $darkgray2;
+    }
+  }
+}
+
+/// GNB가 열린 상태
+#{$headerOpenedSelector} .logo {
+  .icon-logo {
+    fill: $black;
+    @include prefixer(transition, fill 300ms $easeOutCubic);
+
+    .st1 {
+      stroke: $black;
+    }
+  }
+}

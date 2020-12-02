@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+/// 미디어 쿼리
+///
+/// @example scss
+///   .element {
+///     @include mobile {
+///       background: red;  
+///     }
+///   }
+///
+///   // CSS Output
+///   @media (max-width: 768px) {
+///     .element {
+///       background: red;
+///     }
+///   }
+///
+
+@mixin mobile {
+  @media (max-width: #{$breakpointMobile}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$breakpointMinTablet}) and (max-width: #{$breakpointMaxTablet}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$breakpointDesktop}) {
+    @content;
+  }
+}

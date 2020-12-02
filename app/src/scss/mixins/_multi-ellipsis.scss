@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+/// 여러줄 말줄임표시를 적용합니다.
+///
+/// @argument {string} $display
+///
+/// @argument {number} $line
+///   최대 보여질 글줄의 수
+///
+/// @argument {number} $width
+///   넓이값
+///
+/// @argument {number} $height
+///   높이값
+///
+/// @argument {number} $max-width
+///   최대 넓이값
+///
+/// @argument {number} $max-height
+///   최대 높이값
+///
+/// @argument {number} $line-height
+///   행간의 값 
+///
+///
+/// @example scss
+///   .element {
+///     @include mulit-ellipsis($line:3, $height:30px);
+///   }
+///
+///   // CSS Output
+///   .element {
+///     display: block;
+///     display: -webkit-box;
+///     overflow: hidden;
+///     height: 30px;
+///     line-height: 10px;
+///     -webkit-line-clamp: 3;
+///     -webkit-box-orient: vertical;
+///     text-overflow: ellipsis;
+///   }
+///
+
+@mixin multi-ellipsis(
+  $display: block,
+  $line: 2,
+  $width: null,
+  $height: null,
+  $max-widths: null,
+  $max-height: null,
+  $line-height: null
+) {
+  @if ($line-height == null) {
+    $line-height: if(($height != null), ($height / $line), if(($max-height != null), ($max-height / $line), null));
+  }
+  
+  display: $display;
+  display: -webkit-box;
+  overflow: hidden;
+  width: $width;
+  height: $height;
+  max-width: $max-widths;
+  max-width: $max-height;
+  line-height: $line-height;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}

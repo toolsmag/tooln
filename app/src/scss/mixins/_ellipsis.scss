@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+/// 한줄말줄임을 적용합니다
+///
+/// @argument {string} $display
+///   display 속성값
+///
+/// @argument {number} $width
+///   넓이값
+///
+/// @argument {number} $max-width
+///   최대 넓이값
+///
+///
+/// @example scss
+///   .element {
+///     @include ellipsis($width:200px);
+///   }
+///
+///   // CSS Output
+///   .element {
+///     display: block;
+///     overflow: hidden;
+///     width: 200px;
+///     text-overflow: ellipsis;
+///     white-space: nowrap;
+///   }
+///
+
+@mixin ellipsis(
+  $display  : block,
+  $width    : null,
+  $max-width: null
+) {
+  display: $display;
+  overflow: hidden;
+  width: $width;
+  max-width: $max-width;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

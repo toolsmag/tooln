@@ -1,0 +1,412 @@
+@charset "UTF-8";
+
+.articles {
+  @include position(relative, $z-index: 1);
+  @include padding(null $desktopBufferHorizontal);
+  background: $bggray;
+
+  &__inner {
+    @include prefixer(display, box, 'webkit', 'value');
+    @include prefixer(display, flex, 'ms', 'value');
+    @include prefixer(flex-wrap, wrap, 'ms''webkit');
+    @include prefixer(box-shadow, (inset 0 -1px 0 0 black, inset 0 0 0 0 black), 'ms''webkit');
+    @include margin(null auto);
+    max-width: $max-size;
+  }
+
+  .load--more {
+    @include position(relative, $z-index:1);
+    @include margin(-1px auto null);
+    @include size(100%, null);
+    max-width: $max-size;
+    display: none;
+    text-align: center;
+
+    button {
+      @include size(100%, null);
+      @include padding(21px);
+      border-top: 1px solid $black;
+      border-bottom: 1px solid $black;
+      font-size: 24px;
+
+      &:hover,
+      &:focus {
+        span {
+          @include prefixer(box-shadow, (0 1px 0 0 $bggray, 0 2px 0 0 $black), 'ms''webkit');
+        }
+      }
+    }
+  }
+}
+
+.article {
+  @include position(relative);
+  @include size(33.333333333%, null);
+  // @include size(calc(33.333333333% + 1px), null);
+  @include margin(-1px null null -1px);
+  @include padding(9px 9px null);
+  box-sizing: border-box;
+  border-top: 1px solid $black;
+  border-bottom: 1px solid $black;
+
+  &:before,
+  &:after {
+    @include position(absolute, 9px null 9px);
+    @include size(1px, null);
+    display: block;
+    background: $black;
+    content: '';
+  }
+
+  &:before {
+    left: 0;
+  }
+
+  &:after {
+    right: 0;
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+  }
+
+  &__thumb {
+    @include position(relative);
+    display: block;
+
+    .image {
+      display: block;
+      font-size: 0;
+
+      img {
+        @include size(100%, null);
+        display: block;
+        max-width: 100%;
+      }
+    }
+
+    .desc {
+      @include position(absolute, 0 null null 0);
+      @include size(100%);
+      @include cjk-word-break;
+      display: none;
+      overflow: hidden;
+      box-sizing: border-box;
+      background: $bggray;
+      font-size: 20px;
+
+      .inner {
+        @include position(relative);
+        display: block;
+        overflow: hidden;
+        box-sizing: border-box;
+        max-width: 100%;
+        max-height: 100%;
+      }
+
+      .text {
+        display: block;
+      }
+
+      .read {
+        display: block;
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: underline;
+      }
+
+      &--type1 {
+        @include padding(25px 0 15px);
+        border-bottom: 1px solid black;
+        text-align: center;
+
+        &:before,
+        &:after {
+          @include position(absolute, 50% null null 50%);
+          @include size(1px, 150%);
+          display: block;
+          background: $black;
+          content: "";
+        }
+
+        &:before {
+          @include prefixer(transform, (translate3d(-50%, -51.5%, 0) rotate(38deg)), 'webkit''ms');
+        }
+
+        &:after {
+          @include prefixer(transform, (translate3d(-50%, -51.5%, 0) rotate(-38deg)), 'webkit''ms');
+        }
+
+        .inner {
+          @include prefixer(transform, translate3d(-50%, -50%, 0), 'webkit''ms');
+          @include position(absolute, 50% null null 50%, 1);
+          @include size(100%, null);
+          @include margin(-5% null null);
+          @include padding(20px 12% 60px);
+          background: $bggray;
+          font-size: 20px;
+        }
+
+        .text {
+          line-height: 35px;
+        }
+
+        .read {
+          @include position(absolute, null 0 0);
+          background: $bggray;
+          line-height: 60px;
+        }
+      }
+
+      &--type2 {
+        @include padding(23px 30px);
+        @include bg-gradient(top, rgba($bggray, 1), rgba($nenogreen, 1) 48%);
+
+        .inner {
+          height: 100%;
+        }
+
+        .text {
+          overflow: hidden;
+          max-height: calc(100% - 60px);
+          line-height: 35px;
+        }
+
+        .read {
+          margin-top: 26px;
+        }
+      }
+    }
+
+    &:hover,
+    &:focus {
+      .desc {
+        display: block;
+      }
+    }
+  }
+
+  ///
+
+  &__info {
+    display: block;
+
+    .meta {
+      @include prefixer(display, box, 'webkit', 'value');
+      @include prefixer(display, flex, 'ms', 'value');
+      @include prefixer(align-items, center, 'ms''webkit', 'value');
+      @include margin(13px null 16px);
+      @include size(null, 28px);
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      font-size: 12px;
+      letter-spacing: .1em;
+
+      .label {
+        font-family: $fontType1;
+        font-size: 18px;
+        vertical-align: baseline;
+      }
+
+      .button--more {
+        @include position(relative);
+        @include size(null, 24px);
+        @include padding(2px 24px 0 7px);
+        display: none;
+        min-width: 69px;
+        border: 1px solid $black;
+        font-size: 10px;
+        line-height: 1;
+        letter-spacing: 1px;
+        vertical-align: top;
+        background: $bggray;
+
+        &:before,
+        &:after {
+          @include position(absolute, 50% 7px null null);
+          @include prefixer(transform, translateY(-50%), 'webkit''ms');
+          @include size(11px, null);
+          border-top: 1px solid $black;
+          content: '';
+        }
+
+        &:before {
+          @include prefixer(transform, translateY(-50%) rotate(90deg), 'webkit''ms');
+          @include prefixer(transform-origin, center, 'webkit''ms');
+        }
+
+        .more {
+          display: block;
+        }
+
+        .less {
+          display: none;
+        }
+      }
+    }
+
+    .title {
+      display: block;
+      min-height: 125px;
+      font-size: 30px;
+      line-height: 37.5px;
+
+      span {
+        @include prefixer(box-shadow, (0 2px 0 0 $bggray, 0 3px 0 0 $bggray), 'webkit');
+      }
+    }
+
+    &:hover,
+    &:focus {
+      .title {
+        span {
+          @include prefixer(box-shadow, (0 2px 0 0 $bggray, 0 3px 0 0 $black), 'webkit');
+        }
+      }
+    }
+  }
+
+  ///
+}
+
+/* **************************************** */
+// 테플릿
+/* **************************************** */
+@media screen and (max-width: 1024px) {
+  .article {
+    width: 50%;
+    width: calc(50% - 1px);
+  }
+}
+
+/* **************************************** */
+// 모바일 
+/* **************************************** */
+@include mobile {
+  .articles {
+    @include padding(null $mobileBufferHorizontal);
+
+    .load--more {
+      button {
+        @include padding(16px);
+        font-size: 18px;
+      }
+    }
+  }
+
+  .article {
+    &__info {
+      .meta {
+        .button--more {
+          display: block;
+        }
+      }
+    }
+
+    /// 모바일에서 확장되었을때
+    &[data-expanded=true] {
+      .article__thumb:after {
+        display: block;
+      }
+
+      .desc {
+        display: block;
+      }
+
+      .button--more {
+        &:before {
+          @include prefixer(transform, rotate(0), 'webkit''ms');
+        }
+
+        .more {
+          display: none;
+        }
+
+        .less {
+          display: block;
+        }
+      }
+    }
+  }
+
+  ///
+}
+
+@media screen and (max-width: 600px) {
+  .articles__inner {
+    box-shadow: initial;
+  }
+
+  .article {
+    @include size(100%, null);
+    @include padding(15px 10px 30px);
+
+    &:before,
+    &:after {
+      @include position(null, 15px null);
+      display: none;
+    }
+
+    &__thumb {
+
+      &:before,
+      &:after {
+        @include position(absolute, 0 null 15px);
+        @include size(1px, null);
+        background: $black;
+        content: '';
+      }
+
+      &:before {
+        @include position($left: -10px);
+      }
+
+      &:after {
+        @include position($right: -10px);
+      }
+
+      a {
+        @include position(relative);
+        @include padding(null null 15px);
+
+        &:after {
+          @include position(absolute, null -10px 0 -10px);
+          @include size(null, 1px);
+          background: $black;
+          content: '';
+        }
+      }
+
+      .desc--type1 {
+        &:before {
+          @include prefixer(transform, (translate3d(-50%, -51.5%, 0) rotate(37deg)), 'webkit''ms');
+        }
+
+        &:after {
+          @include prefixer(transform, (translate3d(-50%, -51.5%, 0) rotate(-37deg)), 'webkit''ms');
+        }
+
+        .inner {
+          @include padding(null 10px);
+        }
+      }
+
+      .desc--type2 {
+        @include size(null, calc(100% - 15px));
+      }
+    }
+
+    &__info {
+      @include margin(null -10px);
+
+      .title {
+        min-height: 95px;
+        span {
+          box-shadow: inherit !important;
+        }
+      }
+    }
+  }
+}

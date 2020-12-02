@@ -1,0 +1,145 @@
+@charset "utf-8";
+
+
+#{$headerSelector} .nav-opener {
+  
+  @include mobile {
+    @include position(relative);
+    @include size(24px, 20px);
+    text-align: right;
+  }
+
+  @include desktop {
+    @include size(260px, 34px);
+    text-align: right;
+  }
+
+  button {
+    @include size(196px, 100%);
+    background: 0 0 no-repeat;
+    background-size: 100% auto;
+
+    .icon-index,
+    .icon-buger {
+      display: none;
+    }
+
+    /// Mobile INDEX 아이콘
+    @include mobile {
+      @include size(100%);
+
+      &:before,
+      &:after,
+      .icon-buger {
+        @include position(absolute, $left: 0);
+        @include size(24px, 2px);
+        // @include prefixer(filter, drop-shadow(0 1px 2px rgba(0, 0, 0, .2)), 'all');
+        display: block;
+        background: $white;
+      }
+
+      &:before {
+        @include prefixer(transform, translate3d(0, 0, 0), 'all');
+        @include position($top: 0);
+        content: '';
+      }
+
+      .icon-buger {
+        @include prefixer(transform-origin, right, 'all');
+        @include prefixer(transform, rotate(0) translate3d(0, 0, 0), 'all');
+        @include position($top: 50%);
+        @include margin($top: -1px);
+      }
+
+      &:after {
+        @include prefixer(transform, rotate(0) translate3d(0, 0, 0), 'all');
+        @include prefixer(transform-origin, right, 'all');
+        @include position($bottom: 0);
+        content: '';
+      }
+    }
+
+    /// PC INDEX 아이콘
+    @include desktop {
+      .icon-index {
+        @include size(auto, 100%);
+        display: block;
+        overflow: visible;
+        fill: $white;
+      }
+    }
+  }
+}
+
+/// 어바웃 페이지
+#{$aboutPageSelector} .nav-opener {
+  button {
+
+    /// Mobile INDEX 아이콘
+    &:before,
+    &:after,
+    .icon-buger {
+      background: $black;
+    }
+
+    /// PC INDEX 아이콘
+    @include desktop {
+      .icon-index {
+        fill: $black;
+      }
+    }
+  }
+}
+
+/// 스크롤 되었을 때 변화
+#{$headerChangedSelector} .nav-opener {
+  button {
+
+    /// Mobile INDEX 아이콘
+    &:before,
+    &:after,
+    .icon-buger {
+      background: $black;
+      @include prefixer(transition, background 1000ms $easeOutCubic);
+    }
+
+    /// PC INDEX 아이콘
+    svg {
+      fill: $black;
+      @include prefixer(transition, fill 1000ms $easeOutCubic);
+    }
+  }
+}
+
+/// GNB가 열린 상태
+#{$headerOpenedSelector} .nav-opener {
+  button {
+
+    /// Mobile INDEX 아이콘
+    &:before,
+    &:after,
+    .icon-buger {
+      background: $darkgray2;
+      @include prefixer(transition, transform 300ms $easeOutCubic);
+      // @include prefixer(filter, drop-shadow(0 1px 2px rgba(0, 0, 0, 0)), 'all');
+    }
+
+    &:before {
+      transform: translate3d(-3px, -4px, 0);
+    }
+
+    .icon-buger {
+      transform: rotate(-45deg) translate3d(1px, -8px, 0);
+      width: 26px;
+    }
+
+    &:after {
+      transform: rotate(-90deg) translate3d(13px, 4px, 0);
+    }
+
+    /// PC INDEX 아이콘
+    svg {
+      fill: $darkgray2;
+    }
+  }
+}

@@ -1,0 +1,111 @@
+@charset "UTF-8";
+
+.visual {
+  @include position(relative);
+  @include size(100vw, 100vh);
+  /* 윈도우 크롬에서 100vw 사용시 스크롤바 영역만큼 사이즈가 잡혀 가로 스크롤이 생김 */
+  max-width: 100%;
+  cursor: url($icon-mouse-over) 25 25, auto;
+
+  .visual__inner {
+    @include position(fixed, $top: 0, $left:0);
+    @include size(100%);
+    overflow: hidden;
+    background: $black;
+
+    &:after {
+      @include prefixer(transform, translate3d(-50%, 0, 0), 'wekit');
+      @include position(absolute, null null 47px 50%);
+      @include size(48px, 24px);
+      background: url($icon-arrow-bottom) 0 0 no-repeat;
+      background-size: 100% auto;
+      content: '';
+    }
+  }
+
+  &__video-box {
+    @include size(100%);
+
+    .video {
+      @include prefixer(transform, translate3d(-50%, -50%, 0), 'all');
+      @include position(absolute, $top: 50%, $left:50%);
+      @include size(auto, 100vh);
+    }
+
+    .mask {
+      @include position(absolute, $top: 0, $left: 0);
+      @include size(100%);
+
+      svg {
+        @include size(100%);
+      }
+    }
+  }
+
+  &__text-box {
+    @include prefixer(filter, drop-shadow(0 2px 5px rgba(0, 0, 0, .2)), 'all');
+    @include prefixer(transform, translate3d(-50%, -60%, 0), 'all');
+    @include position(absolute, $top: 50%, $left:50%);
+    @include size(100%, null);
+    text-align: center;
+    color: $white;
+
+    .title {
+      display: block;
+      font-family: $fontType2;
+      font-size: 84px;
+      font-weight: lighter;
+      line-height: 1.48;
+      user-select: none;
+    }
+
+    .desc {
+      @include margin($top: 5px);
+      display: block;
+      font-family: $fontBase;
+      font-size: 22px;
+      font-weight: normal;
+      user-select: none;
+    }
+  }
+}
+
+/* **************************************** */
+// 모바일 
+/* **************************************** */
+@include mobile {
+  .visual {
+    .visual__inner {
+      position: relative;
+      &:after {
+        @include position(absolute, null null 19px null);
+        @include size(24px, 12px);
+      }
+    }
+
+    &__video-box {
+      .mask {
+        rect {
+          @include size(100% !important);
+        }
+      }
+    }
+
+    &__text-box {
+      user-select: none;
+
+      .title {
+        font-size: 10.13vw;
+        font-weight: lighter;
+        line-height: 1.28;
+        user-select: none;
+      }
+
+      .desc {
+        @include margin($top: 6%);
+        font-size: 4.44vw;
+        user-select: none;
+      }
+    }
+  }
+}
