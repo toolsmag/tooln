@@ -116,7 +116,7 @@ $ npm run build
 
 아티클 리스트를 추가 하기 위해서는 `app/src/json/articles.json`을 수정해야합니다.
 
-```json
+```
 {
   "initLength": 3,  // 맨처음 화면에 보여질 리스트 수
   "moreLength": 6,  // 아티클이 여러개인 경우 load more 버튼 클릭시 화면에 추가될 리스트 수
@@ -145,7 +145,7 @@ $ npm run build
 
 
 
-```json
+```
 {
   "cover": {},    // 메인 커버
   "related": [], // 하단 관련 아티클에 표시할 아티클 리스트
@@ -159,8 +159,8 @@ $ npm run build
 
 ```
 "cover": {
-	"title": "제목",
-	"description": "설명",
+  "title": "제목",
+  "description": "설명",
   "imageURL": "이미지 URL"
 }
 ```
@@ -182,15 +182,15 @@ $ npm run build
 
 ![스크린샷 2020-12-03 오후 4.06.39](./guide/article01.png)
 
-```json
+```
 {
-	"type": "intro",
-	"label": "Interview",
-	"credits": {
-		"Words": "Danbee Bae",
-		"Photography": "Yeseul Jun"
-	},
-	"summary": "내용"
+  "type": "intro",
+  "label": "Interview",
+  "credits": {
+    "Words": "Danbee Bae",
+    "Photography": "Yeseul Jun"
+  },
+  "summary": "내용"
 },
 ```
 
@@ -198,10 +198,10 @@ $ npm run build
 
 ![스크린샷 2020-12-03 오후 4.14.03](./guide/article02.png)
 
-```json
+```
 {
-	"type": "title",
-	"text": "내용"
+  "type": "title",
+  "text": "내용"
 },
 ```
 
@@ -209,10 +209,10 @@ $ npm run build
 
 ![스크린샷 2020-12-03 오후 4.14.03](./guide/article03.png)
 
-```json
+```
 {
-	"type": "text",
-	"text": "내용"
+  "type": "text",
+  "text": "내용"
 },
 ```
 
@@ -222,8 +222,8 @@ $ npm run build
 
 ```
 {
-	"type": "image",
-	"imageURL": "이미지URL",
+  "type": "image",
+  "imageURL": "이미지URL",
 }
 ```
 
@@ -233,10 +233,10 @@ $ npm run build
 
 ```
 {
-	"type": "image",
-	"isWide": true,
-	"imageURL": "이미지URL",
-	"caption": "이미지설명문구"
+  "type": "image",
+  "isWide": true,
+  "imageURL": "이미지URL",
+  "caption": "이미지설명문구"
 }
 ```
 
@@ -246,12 +246,12 @@ $ npm run build
 
 ```
 {
-	"type": "gallery",
-	"imageURLs": [
-		"./src/img/article/temp/image01.jpg",
-		"./src/img/article/temp/image02.jpg",
-		"./src/img/article/temp/image03.jpg"
-	]
+  "type": "gallery",
+  "imageURLs": [
+    "./src/img/article/temp/image01.jpg",
+    "./src/img/article/temp/image02.jpg",
+    "./src/img/article/temp/image03.jpg"
+  ]
 },
 ```
 
