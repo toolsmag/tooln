@@ -13,8 +13,6 @@ Node 다운로드 페이지 : [http://www.nodejs.org](http://www.nodejs.org/)
   <img src="environment01.png" style="max-width:500px"/>
 </div>
 
-![스크린샷 2020-12-03 오후 12.27.30](/Users/mpruser/Desktop/스크린샷 2020-12-03 오후 12.27.30.png)
-
 ```shell
 // node설치확인
 $ node -v
