@@ -27,7 +27,7 @@
     @include desktop {
       @include size(null, $header-height-desktop);
       @include padding(44px null 38px);
-      @include border(bottom, 2px, solid, $white);
+      @include border(bottom, 1px, solid, $white);
     }
   }
 }
