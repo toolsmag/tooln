@@ -178,3 +178,8 @@ select {
 select::-ms-expand {
   display: none;
 }
+
+/* remember to define focus styles */
+:focus {
+  outline: 0;
+}
