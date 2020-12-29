@@ -183,3 +183,12 @@ select::-ms-expand {
 :focus {
   outline: 0;
 }
+
+/* selection styles */
+::-moz-selection {
+  background: $nenogreen
+}
+
+::selection {
+  background: $nenogreen
+}
