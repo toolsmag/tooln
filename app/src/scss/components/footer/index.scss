@@ -78,13 +78,13 @@
     }
 
     a {
-      @include prefixer(box-shadow, (0 1px 0 0 $bggray, 0 2px 0 0 $black), 'ms''webkit');
+      @include prefixer(box-shadow, (0 1px 0 0 $bggray, 0 2px 0 0 $bggray), 'ms''webkit');
       font-family: $fontType1;
       font-size: 32px;
       text-decoration: none;
-
+      
       &:hover {
-        @include prefixer(box-shadow, (0 1px 0 0 $bggray, 0 2px 0 0 $bggray), 'ms''webkit');
+        @include prefixer(box-shadow, (0 1px 0 0 $bggray, 0 2px 0 0 $black), 'ms''webkit');
       }
     }
   }
