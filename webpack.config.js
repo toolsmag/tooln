@@ -82,6 +82,17 @@ module.exports = {
         },
       },
       {
+        test: /\.(mp4|ogg)$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            // publicPath: '../fonts',
+            outputPath: 'src/',
+            name: '[name].[ext]',
+          },
+        },
+      },
+      {
         test: /\.(jpe?g|gif|png|svg)$/,
         use: [
           {
