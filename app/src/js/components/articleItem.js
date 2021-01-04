@@ -44,8 +44,8 @@ function articleInfo({label, title, link}) {
       '<span class="meta">' + 
         '<span class="label">'+ label +'</span>' + 
         '<button type="button" class="' + CLASS_SELECTOR.TOGGLER.slice(1) + ' view-mo">' + 
-          '<span class="more">MORE</span>' + 
-          '<span class="less">LESS</span>' + 
+          '<span class="more">More</span>' + 
+          '<span class="less">Less</span>' + 
         '</button>' + 
       '</span>' + 
       '<a href="'+ link + '">' + 

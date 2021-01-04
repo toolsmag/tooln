@@ -42,7 +42,6 @@
 .article {
   @include position(relative);
   @include size(33.333333333%, null);
-  // @include size(calc(33.333333333% + 1px), null);
   @include margin(-1px null null -1px);
   @include padding(9px 9px null);
   box-sizing: border-box;
@@ -179,10 +178,12 @@
       }
     }
 
-    &:hover,
-    &:focus {
-      .desc {
-        display: block;
+    @include desktop {
+      &:hover,
+      &:focus {
+        .desc {
+          display: block;
+        }
       }
     }
   }
@@ -213,11 +214,13 @@
       .button--more {
         @include position(relative);
         @include size(null, 24px);
-        @include padding(2px 24px 0 7px);
+        @include margin($top:-3px);
+        @include padding(1px 24px 1px 7px);
         display: none;
         min-width: 69px;
         border: 1px solid $black;
-        font-size: 10px;
+        font-family: $fontType1;
+        font-size: 16px;
         line-height: 1;
         letter-spacing: 1px;
         vertical-align: top;
