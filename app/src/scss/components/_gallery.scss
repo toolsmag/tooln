@@ -62,7 +62,7 @@
     text-align: center;
 
     .button {
-      @include size(14px);
+      @include size(12px);
       @include margin($left: 26px);
       display: inline-block;
       border-radius: 50%;
