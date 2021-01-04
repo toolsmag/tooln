@@ -19,6 +19,10 @@
   .article {
     display: block;
   }
+
+  .load--more {
+    display: none !important;
+  }
 }
 
 @include mobile {
