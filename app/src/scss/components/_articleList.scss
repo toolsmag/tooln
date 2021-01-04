@@ -179,6 +179,7 @@
     }
 
     @include desktop {
+
       &:hover,
       &:focus {
         .desc {
@@ -300,6 +301,10 @@
   }
 
   .article {
+    &:last-child {
+      border-bottom: 0;
+    }
+
     &__info {
       .meta {
         .button--more {
@@ -406,6 +411,7 @@
 
       .title {
         min-height: 95px;
+
         span {
           box-shadow: inherit !important;
         }
