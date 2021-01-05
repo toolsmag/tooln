@@ -3,7 +3,8 @@
     "title": "비누의 요원한 얼굴<br class=\"view-pc\"> <strong>구본창 작가</strong>",
     "description":
     "닳고 마른 비누가 희고 깨끗한 배경 가운데 누워 있다.<br class=\"view-pc\"> 얼마나 오래된 비누인지 짐작하기 어려운 것은 이 배경 때문이다.<br class=\"view-pc\"> 언제나처럼, 비누는 흘러간 생을 담담히 보내고 내일의 미지를 기다리는 중이다.",
-    "imageURL": "src/img/article/temp/cover.jpg"
+    "imageURL1": "src/img/article/temp/cover.jpg",
+    "imageURL2": "src/img/article/temp/m_cover.jpg"
   },
   "related": ["a1", "a2", "a3", "a4", "a5"],
   "contents": [
