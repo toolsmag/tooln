@@ -4,6 +4,7 @@ import $ from 'jquery';
 /** internal module */
 import '../scss/common.scss';
 import * as apis from './apis';
+import utiles from './utiles';
 import headerInteraction from './handler/headerInteraction';
 import cover from './components/cover';
 import text from './components/text';
@@ -15,7 +16,7 @@ import relatedList from './components/articleList';
 /** bind event handler */
 headerInteraction.init();
 
-/** creator for article */ 
+/** creator for article */
 var contents = { gallery, image, intro, title: text, text };
 
 /** load related data && create related list */
@@ -37,11 +38,13 @@ function createRelatedList($container, relatedIds) {
 }
 
 // acticle script
-apis.getArticleContent()
+apis
+  .getArticleContent()
   .done(function (data) {
     var $coverEl = $('.cover');
     var $writeEl = $('.write');
     var $relatedEl = $('.related');
+    var isMobile = utiles.isMobileSize();
 
     // create article contents
     var coverChild = cover(data.cover);
@@ -50,11 +53,30 @@ apis.getArticleContent()
     });
 
     // add article contents
-    $coverEl.css('background-image', 'url(' + data.cover.imageURL + ')').append(coverChild);
     $writeEl.append(writeChild);
+
+    $coverEl
+      .css(
+        'background-image',
+        'url(' + (isMobile ? data.cover.imageURL2 : data.cover.imageURL1) + ')',
+      )
+      .append(coverChild);
 
     // swiper setting
     gallerySwiperInit();
+
+    //
+    $(window).on('resize', function () {
+      var newIsMobile = utiles.isMobileSize();
+      if (isMobile !== newIsMobile) {
+        console.log('newIsMobile')
+        isMobile = newIsMobile;
+        $coverEl.css(
+          'background-image',
+          'url(' + (isMobile ? data.cover.imageURL2 : data.cover.imageURL1) + ')',
+        );
+      }
+    });
 
     // create & add related list
     data.related.length && createRelatedList($relatedEl, data.related);
