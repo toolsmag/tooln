@@ -53,14 +53,14 @@
     .title {
       display: block;
       font-family: $fontType2;
-      font-size: 84px;
+      font-size: 78px;
       font-weight: lighter;
-      line-height: 1.48;
+      line-height: 1.0769230769230769;
       user-select: none;
     }
 
     .desc {
-      @include margin($top: 5px);
+      @include margin($top: 42px);
       display: block;
       font-family: $fontBase;
       font-size: 22px;

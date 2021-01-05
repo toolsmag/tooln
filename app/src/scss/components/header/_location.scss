@@ -2,11 +2,18 @@
 
 #{$headerSelector} .location {
   @include prefixer(flex, 0 1 auto, 'all');
+  @include margin(4px 0 0);
   font-family: $fontType2;
-  font-size: 46px;
+  font-size: 32px;
   text-align: center;
   line-height: 1;
   color: $white;
+
+  span {
+    color: inherit;
+    line-height: 1;
+  }
+
 
   @include mobile {
     display: none;
