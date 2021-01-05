@@ -13,9 +13,9 @@ headerInteraction.init();
 gsap.registerPlugin(ScrollTrigger);
 
 /** Get DOM Elements */
-var imgs = gsap.utils.toArray('.about-info__img');
+var imgs = gsap.utils.toArray('.about-intro__img, .about-info__img, .about-content__desc img');
 var sections = gsap.utils.toArray('section');
-
+window.a = imgs;
 /** Get Document width */
 var getTotalWidth = () => sections.reduce((total, section) => total + section.offsetWidth, 0);
 

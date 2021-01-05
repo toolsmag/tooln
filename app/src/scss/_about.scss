@@ -13,10 +13,11 @@
 .view-mo {
   display: none;
 }
- 
+
 .container--row {
   display: flex;
-  & > * {
+
+  &>* {
     flex: 1;
   }
 }
@@ -31,7 +32,7 @@
     bottom: 0;
     width: 100%;
     height: 100%;
-    background-color:$bggray;
+    background-color: $bggray;
 
     section {
       flex-shrink: 0;
@@ -39,6 +40,7 @@
       box-sizing: border-box;
     }
   }
+
   &-intro {
     z-index: 2;
     position: relative;
@@ -52,18 +54,21 @@
       width: 1272px;
       height: 84px;
       margin-top: -80px;
+
       background: {
         image: url('../img/about/about_title.svg');
         repeat: no-repeat;
         size: contain;
       }
     }
+
     &__img {
       position: absolute;
       top: 0;
       right: 0;
       bottom: 0;
       height: 100%;
+      transform: scale(1.04);
       &-box {
         overflow: hidden;
         position: absolute;
@@ -74,23 +79,28 @@
       }
     }
   }
+
   &-content {
     width: 1920px;
     padding: 0 155px;
+
     &__tit {
       display: block;
       width: 832px;
       height: 54px;
+
       background: {
         image: url('../img/about/about_title_sub.svg');
         repeat: no-repeat;
         size: contain;
       }
+
       &-box {
         position: absolute;
         top: 16.2%;
         left: 155px;
       }
+
       &-sub {
         display: block;
         margin-top: 25px;
@@ -99,7 +109,9 @@
         font-weight: 600;
       }
     }
+
     &__desc {
+      position: relative;
       font-size: 22px;
       color: #323130;
       font-weight: 600;
@@ -107,10 +119,28 @@
       text-indent: 70px;
       text-align: justify;
       letter-spacing: -.03em;
-      & + & {
+
+      &+& {
         margin-left: 70px;
       }
+
+      picture {
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        margin-top: -72px;
+        text-indent: 0;
+        transform: translateY(-100%);
+        
+        img {
+          transform: scale(1.07) ;
+          min-width: 100%;
+        }
+      }
     }
+
     .container--row {
       position: absolute;
       right: 155px;
@@ -118,14 +148,17 @@
       left: 33.3%;
     }
   }
+
   &-info {
     width: 2880px;
+
     .container--row {
       position: absolute;
       top: 22.2%;
       right: 155px;
       left: 1523px;
     }
+
     &__img {
       position: absolute;
       top: 0;
@@ -136,6 +169,7 @@
       margin: auto;
       transform: scale(1.2);
       transition: transform 3s;
+
       &-box {
         overflow: hidden;
         position: absolute;
@@ -145,35 +179,43 @@
         width: 730px;
       }
     }
+
     &__list {
       &:first-child {
         padding-left: 45px;
       }
     }
+
     &__tit {
       height: 23px;
+
       background: {
         repeat: no-repeat;
         size: contain;
       }
+
       &.tit {
         &--contact {
           width: 147px;
           background-image: url('../img/about/about_title_em1.svg');
         }
+
         &--office {
           width: 111px;
           background-image: url('../img/about/about_title_em2.svg');
         }
+
         &--stockist {
           width: 156px;
           background-image: url('../img/about/about_title_em3.svg');
         }
       }
+
       &:not(:first-child) {
         margin-top: 90px;
       }
     }
+
     &__desc {
       margin-top: 40px;
       font-size: 22px;
@@ -182,23 +224,28 @@
       line-height: 36px;
     }
   }
+
   &-stockist {
     &__item {
       font-size: 22px;
       color: #323130;
       line-height: 36px;
-      & + & {
+
+      &+& {
         margin-top: 30px;
       }
     }
+
     &__name {
       float: left;
       display: block;
       width: 120px;
     }
+
     &__desc {
       overflow: hidden;
     }
+
     &__summary {
       display: block;
       margin: 90px 0 0 120px;
@@ -214,26 +261,30 @@
   .view-mo {
     display: block;
   }
+
   .view-pc {
     display: none;
   }
 
   .container--row {
-    & > * {
+    &>* {
       flex: none;
     }
   }
+
   .about {
     &-section {
       display: block;
       position: static;
       width: auto;
       padding: 0 0 80px;
+
       section {
         height: auto;
         padding: 0 20px;
       }
     }
+
     &-intro {
       &__tit {
         position: relative;
@@ -244,10 +295,12 @@
         margin: 130px 0 0;
         background-image: url('../img/about/m_about_title.svg');
       }
+
       &__img {
         position: static;
         width: 100%;
         height: auto;
+
         &-box {
           position: static;
           margin-top: -12px;
@@ -255,78 +308,97 @@
         }
       }
     }
+
     &-content {
       width: auto;
       padding: 0;
+
       .container--row {
         display: block;
         position: static;
         padding: 0;
         margin-top: 35px;
       }
+
       &__tit {
         width: 263px;
         height: 70px;
         background-image: url('../img/about/m_about_title_sub.svg');
+
         &-box {
           position: static;
           margin: 52px 0 0;
         }
+
         &-sub {
           margin-top: 15px;
           font-size: 18px;
           line-height: 26px;
         }
       }
+
       &__desc {
         font-size: 16px;
         font-weight: normal;
         line-height: 28px;
         text-indent: initial;
-        & + & {
+
+        &+& {
           margin: 20px 0 0;
         }
       }
     }
+
     &-info {
       width: auto;
+
       .container--row {
         display: block;
         position: static;
       }
+
       &__img {
         position: static;
         width: 100%;
         transform: none !important;
+
         &-box {
           position: static;
           width: auto;
           margin: 50px -20px;
         }
       }
+
       &__list {
         padding: 0 !important;
-        & + & {
+
+        &+& {
           margin-top: 35px;
         }
       }
+
       &__tit {
         height: 13px;
+
         &.tit {
           &--contact {
             width: 88px;
           }
+
           &--office {
             width: 62px;
           }
+
           &--stockist {
             width: 87px;
           }
         }
+
         &:not(:first-child) {
           margin-top: 35px;
         }
       }
+
       &__desc {
         margin-top: 15px;
         font-size: 16px;
@@ -334,17 +406,20 @@
         font-weight: normal;
       }
     }
+
     &-stockist {
       &__item {
         margin-top: 20px;
         font-size: 16px;
         line-height: 28px;
       }
+
       &__name {
         float: none;
         width: auto;
         margin-bottom: 5px;
       }
+
       &__summary {
         margin: 20px 0 0;
         font-size: 16px;
