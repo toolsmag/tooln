@@ -10,7 +10,6 @@ var bannerTitles = gsap.utils.toArray('.banner__info .title');
 
 export default {
   init: function () {
-    console.log(1);
     /** Set Scroll Interaction */
     ScrollTrigger.matchMedia({
       '(max-width: 769px)': function () {
