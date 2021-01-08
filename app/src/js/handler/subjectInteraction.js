@@ -270,7 +270,7 @@ export default (function (win, doc, $win, $doc) {
 
       this.scenes.image3 = new ScrollMagic.Scene({
         triggerElement: this.SELECTORS.SUBJECT,
-        triggerHook: utils.isMobileSize() ? 0.7 : 0.6,
+        triggerHook: utils.isMobileSize() ? 0.5 : 0.6,
         duration: utils.isMobileSize()
           ? this.getSizeAndPosData(this.$els.image3).height
           : this.getSizeAndPosData(this.$els.image3).height / 2,
@@ -307,7 +307,7 @@ export default (function (win, doc, $win, $doc) {
       this.tweens.text4 = TweenMax.fromTo(
         this.SELECTORS.TEXT4,
         1,
-        { opacity: 0, y: this.getSizeAndPosData(this.$els.text4).height / 10 },
+        { opacity: 0, y: this.getSizeAndPosData(this.$els.text4).height / 6 },
         { opacity: 1, y: 0 },
       );
 
