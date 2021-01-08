@@ -3,49 +3,49 @@
   "moreLength": 6,
   "list": [
     {
-      "id": "a1",
+      "id": "4",
       "type": "type2",
-      "label": "Interview",
-      "title": "비누의 요원한 얼굴<br><strong>구본창 작가</strong>",
-      "link": "./article.html?temp",
-      "description": "닳고 마른 비누가 희고 깨끗한 배경 가운데 누워 있다. 얼마나 오래된 비누인 지 짐작하기 어려운 것은 이 배경 때문이다. 언제나처럼, 비누는 흘러간 생을 담담히 보내고 내일의 미지를 기다리는 와중이다. 사진가 구본창은 2004년 부터 2007년까지 비누 연작 시리즈를 집중적으로 이어갔다.",
-      "imageURL": "./src/img/article/thumbnails/article01.jpg"
+      "link": "./article.html?article4",
+      "imageURL": "./src/img/article/article4/thumb.jpg",
+      "label": "Article",
+      "title": "보이지 않는 풍요로의 초대, 이솝",
+      "description": "향은 잠재돼 있던 우리의 감각과 정신을 일깨우고, 때로 기억 저편의 추억을 불러일으키기도 한다. 그렇기에 향이 이끄는 마법과 같은 순간은 한 편의 시에 비유된다."
     },
     {
-      "id": "a2",
+      "id": "5",
       "type": "type1",
-      "label": "Interview",
-      "title": "비누의 요원한 얼굴<br><strong>구본창 작가</strong>",
-      "link": "./article.html?temp",
-      "description": "닳고 마른 비누가 희고 깨끗한 배경 가운데 누워 있다. 얼마나 오래된 비누인 지 짐작하기 어려운 것은 이 배경 때문이다. 언제나처럼, 비누는 흘러간 생을 담담히 보내고 내일의 미지를 기다리는 와중이다. 사진가 구본창은 2004년 부터 2007년까지 비누 연작 시리즈를 집중적으로 이어갔다.",
-      "imageURL": "./src/img/article/thumbnails/article01.jpg"
+      "link": "./article.html?article5",
+      "imageURL": "./src/img/article/article5/thumb.jpg",
+      "label": "Article",
+      "title": "친환경 코즈메틱 브랜드, 러쉬",
+      "description": "25년이라는 시간 동안 친환경 코즈메틱 브랜드 러쉬가 고수해 온 가치와 신념은 남달랐다. 우리가 모르는 사이 사람과 동물 그리고 환경을 지켜내고자 단 한 번도 쉬지 않고 세계 각지에서 캠페인을 펼쳐왔다."
     },
     {
-      "id": "a3",
-      "type": "type1",
-      "label": "Interview",
-      "title": "비누의 요원한 얼굴<br><strong>구본창 작가</strong>",
-      "link": "./article.html?temp",
-      "description": "닳고 마른 비누가 희고 깨끗한 배경 가운데 누워 있다. 얼마나 오래된 비누인 지 짐작하기 어려운 것은 이 배경 때문이다. 언제나처럼, 비누는 흘러간 생을 담담히 보내고 내일의 미지를 기다리는 와중이다. 사진가 구본창은 2004년 부터 2007년까지 비누 연작 시리즈를 집중적으로 이어갔다.",
-      "imageURL": "./src/img/article/thumbnails/article01.jpg"
+      "id": "6",
+      "type": "type2",
+      "link": "./article.html?article6",
+      "imageURL": "./src/img/article/article6/thumb.jpg",
+      "label": "Article",
+      "title": "10인의 공간 속 사적인 비누 취향",
+      "description": "사람은 누구나 자기만의 취향을 지니고 있다. 우리는 매 순간 무엇인가를 끊임없이 선택하며 살아간다. 이때 우리로 하여금 무엇인가를 선택하도록 하는 무의식의 가치가 바로 취향이다. 여기 10명의 인터뷰이가 자신만의 비누 취향을 풀어놓았다.  그들의 라이프스타일이 그대로 드러난 일상 공간과 함께."
     },
     {
-      "id": "a4",
+      "id": "7",
       "type": "type1",
-      "label": "Interview",
-      "title": "비누의 요원한 얼굴<br><strong>구본창 작가</strong>",
-      "link": "./article.html?temp",
-      "description": "닳고 마른 비누가 희고 깨끗한 배경 가운데 누워 있다. 얼마나 오래된 비누인 지 짐작하기 어려운 것은 이 배경 때문이다. 언제나처럼, 비누는 흘러간 생을 담담히 보내고 내일의 미지를 기다리는 와중이다. 사진가 구본창은 2004년 부터 2007년까지 비누 연작 시리즈를 집중적으로 이어갔다.",
-      "imageURL": "./src/img/article/thumbnails/article01.jpg"
+      "link": "./article.html?article7",
+      "imageURL": "./src/img/article/article7/thumb.jpg",
+      "label": "Article",
+      "title": "삶에 정화와 멈춤이 필요한 순간, 한아조",
+      "description": "자신의 이름을 내걸고 무언가를 만든다는 것은 제작자의 입장에선 생산 과정에 있어  한 치의 부끄러움도 없다는 뜻이며, 소비자에게는 신뢰의 산물이다.  척박한 수제 비누 시장에서  지금의 이들이 있기까지, 이들에겐 위대하고도 소박한 '비누'가 있었다."
     },
     {
-      "id": "a5",
+      "id": "8",
       "type": "type1",
-      "label": "Interview",
-      "title": "비누의 요원한 얼굴<br><strong>구본창 작가</strong>",
-      "link": "./article.html?temp",
-      "description": "닳고 마른 비누가 희고 깨끗한 배경 가운데 누워 있다. 얼마나 오래된 비누인 지 짐작하기 어려운 것은 이 배경 때문이다. 언제나처럼, 비누는 흘러간 생을 담담히 보내고 내일의 미지를 기다리는 와중이다. 사진가 구본창은 2004년 부터 2007년까지 비누 연작 시리즈를 집중적으로 이어갔다.",
-      "imageURL": "./src/img/article/thumbnails/article01.jpg"
+      "link": "./article.html?article8",
+      "imageURL": "./src/img/article/article8/thumb.jpg",
+      "label": "Article",
+      "title": "복잡한 세상에서 비누를 바라보는 특별한 시선, 이필호",
+      "description": "세상은 온통 화학물질로 이루어져 있다. 우리 몸, 우리가 먹고 마시고 생활하는 의식주 모두가  화학물질로 이루어져 있다. 살아가는 일이 곧 화학물질과의 끊임없는 소통인 세상에서  비누는 어떤 존재일까. 강원대학교 화학과 이필호 교수의 시선으로 비누를 가까이에서, 특별하게 바라보았다."
     }
   ]
 }
