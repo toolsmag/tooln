@@ -12,7 +12,7 @@
 }
 
 .banner {
-  @include padding(24px 0);
+  @include padding(20px 0);
   border-top: 1px solid $black;
 
   a {

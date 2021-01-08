@@ -43,14 +43,14 @@
   @include position(relative);
   @include size(33.333333333%, null);
   @include margin(-1px null null -1px);
-  @include padding(9px 9px null);
+  @include padding(20px 20px null);
   box-sizing: border-box;
   border-top: 1px solid $black;
   border-bottom: 1px solid $black;
 
   &:before,
   &:after {
-    @include position(absolute, 9px null 9px);
+    @include position(absolute, 20px null 20px);
     @include size(1px, null);
     display: block;
     background: $black;
@@ -389,11 +389,12 @@
 
       .desc--type1 {
         &:before {
-          @include prefixer(transform, (translate3d(-50%, -51.5%, 0) rotate(37deg)), 'webkit''ms');
+          @include prefixer(transform, (translate3d(-43%, -50.5%, 0) rotate(36.5deg)), 'webkit''ms');
+          
         }
 
         &:after {
-          @include prefixer(transform, (translate3d(-50%, -51.5%, 0) rotate(-37deg)), 'webkit''ms');
+          @include prefixer(transform, (translate3d(-43%, -50.5%, 0) rotate(-36.5deg)), 'webkit''ms');
         }
 
         .inner {

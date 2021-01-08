@@ -63,7 +63,7 @@
 
     // 첫번째 이미지
     &--first {
-      @include size(57.6%, 81.09375vw);
+      @include size(55.9731543624161%, 81.09375vw);
       max-width: 834px !important;
       max-height: 1250px !important;
       margin: 0 !important;
@@ -71,18 +71,18 @@
 
     // 두번째 이미지
     &--second {
-      @include size(40.62153163152053%, null);
-      @include padding($top: 38.59060402684564%);
+      @include size(48.9%, null);
+      @include padding($top: 38.7248322147651%);
       float: right;
-      max-width: 586px !important;
+      max-width: 730px !important;
     }
 
     // 세번째 이미지
     &--third {
-      @include size(74.47280799112097%, null);
-      @include margin(null auto);
-      @include padding($top: 49.12751677852349%);
-      max-width: 1077px !important;
+      @include size(61.47651006711409%, null);
+      @include padding($top: 41.67785234899329%);
+      float: right;
+      max-width: 916px !important;
     }
   }
 
@@ -90,56 +90,60 @@
   &__text {
     color: $darkgray;
     letter-spacing: -1px;
-    
+
     .title {
       font-family: $fontType2;
-      font-size: 56px;
-      font-weight: bold;
-      font-style: italic;
-      line-height: 1.04;
+      font-size: 52px;
+      line-height: 1.19;
     }
 
     .desc {
-      @include margin($top: 2.8%);
+      @include margin($top: 47px);
       font-family: $fontBase;
       font-size: 22px;
       line-height: 1.63;
 
       &--sub {
-        @include margin($top: 2.2%);
+        @include margin($top: 20px);
         font-family: $fontType2;
         font-weight: bold;
         line-height: 1.44;
+        letter-spacing: 1px;
 
         span[lang=ko] {
           font-family: $fontBase;
           font-size: 20px;
+          letter-spacing: initial;
         }
       }
     }
 
     // 첫번째 텍스트
     &--first {
-      @include position(absolute, 58% null null 39%);
+      @include position(absolute, 58% null null 33.7%);
     }
 
     // 두번째 텍스트
     &--second {
-      @include position(absolute, 55% 42.4% null null);
+      @include padding(49px 0 0 59.328859060402685%);
+      clear: both;
+      text-align: left;
       letter-spacing: -2px;
-      text-align: right;
     }
 
     // 세번째 텍스트
     &--third {
       @include position(relative, $z-index: 1);
-      @include margin($top: -2%);
-      text-align: center;
+      @include padding(58px null null 38.52348993288591%);
+      clear: both;
+      text-align: left;
       letter-spacing: -2px;
 
       .desc {
+        @include margin($top: 8px);
+
         &--sub {
-          @include margin($top: 3%);
+          @include margin($top: 57px);
           font-family: $fontBase;
         }
       }
@@ -184,12 +188,11 @@
 
     /// 모바일 박스
     &__box {
-
-      // 첫번째 박스
-      &--first,
-      &--second,
+      &--second {
+        @include margin($top: 20.13888888888889vw);
+      }
       &--third {
-        @include margin($top: 14%);
+        @include margin($top: 22.22222222222222vw);
       }
     }
 
@@ -200,52 +203,48 @@
       &--first {
         @include size(100%, null);
         @include padding($top: 150.0777%);
+        right: -$mobileBufferHorizontal;
       }
 
       // 모바일 두번째 이미지
       &--second {
-        @include size(100%, null);
-        @include padding($top: 97.9505617977528%);
+        @include size(calc(100% + #{$mobileBufferHorizontal * 2}), null);
+        @include margin($left: -$mobileBufferHorizontal);
+        @include padding($top: 132.99120234604106%);
         float: none;
-        max-width: 100% !important;
+        max-width: none !important;
       }
 
       // 모바일 세번째 이미지
       &--third {
         @include size(100%, null);
-        @include margin(initial);
-        @include padding($top: 136.29283489096574%);
+        @include margin($top: -22.5vw);
+        @include padding($top: 128.50467289719626%);
+        left: -$mobileBufferHorizontal;
 
         img {
-          @include position(absolute, $top: 50%, $left: 50%);
-          @include prefixer(transform, translate3d(-50%, -50%, 0), 'all');
-          @include size(auto, 100%);
+          @include position(absolute, $top: 0, $left: 0);
+          @include size(100%, auto);
         }
       }
     }
 
     /// 모바일 텍스트
     &__text {
-      @include margin($top: -5%);
       text-align: center;
 
-      br {
-        display: none;
-      }
-
       .title {
-        font-size: 8.33vw;
+        font-size: 7.2vw;
         line-height: 1.16;
       }
 
       .desc {
-        @include margin($top: 6.69781%);
-        font-size: 4.4vw;
+        font-size: 3.88vw;
         line-height: 1.6;
 
         &--sub {
-          @include margin($top: 5.9190031%);
-          font-size: 4.44vw;
+          font-size: 3.88vw;
+          font-weight: normal;
           line-height: 1.515;
 
           span[lang=ko] {
@@ -257,12 +256,14 @@
       // 모바일 첫번째 텍스트
       &--first {
         @include position(relative, 0, $z-index: 1);
+        @include margin($top: -25.9vw);
+        text-align: left;
 
         .desc {
-          @include margin(null 18%);
+          @include margin($top: 1.38vw);
 
           &--sub {
-            @include margin(null auto);
+            @include margin($top: 8.75vw);
           }
         }
       }
@@ -270,18 +271,29 @@
       // 모바일 두번째 텍스트
       &--second {
         @include position(relative, 0, $z-index: 1);
+        @include margin($top: 7.916666666666667%);
+        @include padding(0);
         letter-spacing: 0;
-        text-align: center;
+        text-align: left;
+
       }
 
       // 모바일 세번째 텍스트
       &--third {
-        text-align: center;
+        @include padding(0);
+        text-align: left;
         letter-spacing: 0;
 
+        &.view-mo {
+          @include padding(0 0 0 13vw);
+        }
+
         .desc {
+          @include margin($top: 0);
+          @include padding($top: 3.19vw);
+          
           &--sub {
-            @include margin($top: 6.69781%);
+            @include padding($top: 7.2vw);
             font-size: 4.4vw;
             font-weight: bold;
           }

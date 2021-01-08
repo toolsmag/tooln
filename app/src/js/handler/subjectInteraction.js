@@ -1,9 +1,9 @@
 /** external module */
 import $ from 'jquery';
 import ScrollMagic from 'ScrollMagic';
-import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
+import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
 import { gsap, TweenMax } from 'gsap';
- 
+
 ScrollMagicPluginGsap(ScrollMagic, TweenMax);
 
 /** internal module */
@@ -33,6 +33,7 @@ export default (function (win, doc, $win, $doc) {
       BOX3: '#subjectBox3',
       IMAGE3: '#subjectImage3',
       TEXT3: '#subjectText3',
+      TEXT4: '#subjectText4',
     },
     init: function () {
       this.setElements();
@@ -156,7 +157,7 @@ export default (function (win, doc, $win, $doc) {
         triggerElement: this.SELECTORS.SUBJECT,
         triggerHook: isMobileSize ? 0.7 : 0.5,
         offset: this.getSizeAndPosData(this.$els.title).height,
-        duration: this.getSizeAndPosData(this.$els.image1).height * (isMobileSize? 2: 1.5),
+        duration: this.getSizeAndPosData(this.$els.image1).height * (isMobileSize ? 2 : 1.5),
       })
         .setTween(this.tweens.image1)
         .addTo(this.controller);
@@ -301,6 +302,26 @@ export default (function (win, doc, $win, $doc) {
           this.getSizeAndPosData(this.$els.subject).posY / 1.1,
       })
         .setTween(this.tweens.text3)
+        .addTo(this.controller);
+
+      this.tweens.text4 = TweenMax.fromTo(
+        this.SELECTORS.TEXT4,
+        1,
+        { opacity: 0, y: this.getSizeAndPosData(this.$els.text4).height / 10 },
+        { opacity: 1, y: 0 },
+      );
+
+      this.scenes.text4 = new ScrollMagic.Scene({
+        triggerElement: this.SELECTORS.SUBJECT,
+        triggerHook: utils.isMobileSize() ? 0.7 : 0.6,
+        duration: utils.isMobileSize()
+          ? this.getSizeAndPosData(this.$els.text4).height
+          : this.getSizeAndPosData(this.$els.text4).height / 1.6,
+        offset:
+          this.getSizeAndPosData(this.$els.text4).posY -
+          this.getSizeAndPosData(this.$els.subject).posY / 1.1,
+      })
+        .setTween(this.tweens.text4)
         .addTo(this.controller);
     },
   };
