@@ -47,6 +47,7 @@
     // 세번째 박스
     &--third {
       @include margin($top: 10.549389567147614%);
+      @include padding($bottom: 75%);
     }
   }
 
@@ -193,6 +194,7 @@
       }
       &--third {
         @include margin($top: 22.22222222222222vw);
+        @include padding($bottom: 0);
       }
     }
 
@@ -303,7 +305,6 @@
           }
         }
       }
-
       //
     }
 

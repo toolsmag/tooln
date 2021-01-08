@@ -13,8 +13,9 @@ export default {
   selector: {
     header: '.js-header',
     opener: '.js-header-opner',
-    navis: '.js-header-navi',
     naviBox: '.js-header-navi-box',
+    navi: '.js-header-navi',
+    naviItems: '.js-header-navi-items',
     moreMark: '.js-header-more-mark',
   },
   init: function () {
@@ -24,14 +25,16 @@ export default {
   getElements: function () {
     this.$container = $(this.selector.header);
     this.$opener = this.$container.find(this.selector.opener);
-    this.$navis = this.$container.find(this.selector.navis);
     this.$naviBox = this.$container.find(this.selector.naviBox);
+    this.$navi = this.$container.find(this.selector.navi);
+    this.$naviItems = this.$container.find(this.selector.naviItems);
     this.$naviItemMreMark = this.$container.find(this.selector.moreMark);
   },
   bindEvents: function () {
     $(window).on('scroll', $.proxy(this.windowScrollControl, this));
+    $(window).on('resize', $.proxy(this.windowResizing, this));
     this.$opener.on('click', $.proxy(this.extendedControl, this));
-    this.$navis.on('scroll', $.proxy(this.scrollControl, this));
+    this.$navi.on('scroll', $.proxy(this.scrollControl, this));
   },
   extendedControl: function () {
     if (this.isExpanded) {
@@ -40,6 +43,16 @@ export default {
     } else {
       this.isExpanded = true;
       this.setExpanded();
+
+      if (this.$navi.height() > this.$naviItems.outerHeight()) {
+        console.log(1)
+        this.hideMoreMark();
+      }
+    }
+  },
+  windowResizing: function (e)  {
+    if (this.$navi.height() > this.$naviItems.outerHeight()) {
+      this.hideMoreMark();
     }
   },
   windowScrollControl: function (e) {
@@ -50,14 +63,14 @@ export default {
     }
   },
   setExpanded: function () {
-    this.$navis.eq(this.activeNaviIndex).show();
+    this.$navi.eq(this.activeNaviIndex).show();
     this.$naviBox.show();
     this.$container.attr('data-js-expanded', true);
     this.scrollControl();
   },
   setCollapsed: function () {
     this.$container.attr('data-js-expanded', false);
-    this.$navis.scrollTop(0).hide();
+    this.$navi.scrollTop(0).hide();
     this.$naviBox.hide();
     this.hideMoreMark();
   },
@@ -65,7 +78,7 @@ export default {
     e && e.stopPropagation();
 
     if (this.isExpanded) {
-      var $target = this.$navis.eq(this.activeNaviIndex);
+      var $target = this.$navi.eq(this.activeNaviIndex);
       var scrollHeight = utils.getScrollHeight($target);
       var scrollPosY = utils.getScrollBottom($target);
 
@@ -80,13 +93,17 @@ export default {
     this.$naviItemMreMark.show().off('transitionend').attr('style', 'opacity: 1');
   },
   hideMoreMark: function () {
-    this.$naviItemMreMark
-      .one(
-        'transitionend',
-        $.proxy(function () {
-          this.$naviItemMreMark.hide();
-        }, this),
-      )
-      .attr('style', 'opacity: 0');
+    if (!this.$naviItemMreMark[0].style.opacity) {
+      this.$naviItemMreMark
+        .one(
+          'transitionend',
+          $.proxy(function () {
+            this.$naviItemMreMark.hide();
+          }, this),
+        )
+        .attr('style', 'opacity: 0');
+    } else {
+      this.$naviItemMreMark.attr('style', 'opacity: 0').hide();
+    }
   },
 };
