@@ -31,8 +31,7 @@ function articleThumbnail({ type, link, description, imageURL }) {
           '<span class="inner">' +
           '<span class="text">'+ description +'</span>' +
           '<span class="read"><span>Read</span></span>' +
-          '</span>' +
-        '</span>' + 
+        '</span>' +
       '</a>' + 
     '</span>'
   );
