@@ -223,7 +223,7 @@ export default (function (win, doc, $win, $doc) {
 
       this.scenes.image2 = new ScrollMagic.Scene({
         triggerElement: this.SELECTORS.SUBJECT,
-        triggerHook,
+        triggerHook: 0.7,
         duration: utils.isMobileSize()
           ? this.getSizeAndPosData(this.$els.image2).height
           : this.getSizeAndPosData(this.$els.image2).height / 2,
@@ -246,7 +246,7 @@ export default (function (win, doc, $win, $doc) {
 
       this.scenes.text2 = new ScrollMagic.Scene({
         triggerElement: this.SELECTORS.SUBJECT,
-        triggerHook,
+        triggerHook: utils.isMobileSize() ? 0.9 : 0.7,
         duration: utils.isMobileSize()
           ? this.getSizeAndPosData(this.$els.text2).height
           : this.getSizeAndPosData(this.$els.text2).height / 2,
@@ -270,7 +270,7 @@ export default (function (win, doc, $win, $doc) {
 
       this.scenes.image3 = new ScrollMagic.Scene({
         triggerElement: this.SELECTORS.SUBJECT,
-        triggerHook: utils.isMobileSize() ? 0.5 : 0.6,
+        triggerHook: utils.isMobileSize() ? 0.7 : 0.7,
         duration: utils.isMobileSize()
           ? this.getSizeAndPosData(this.$els.image3).height
           : this.getSizeAndPosData(this.$els.image3).height / 2,
@@ -293,7 +293,7 @@ export default (function (win, doc, $win, $doc) {
 
       this.scenes.text3 = new ScrollMagic.Scene({
         triggerElement: this.SELECTORS.SUBJECT,
-        triggerHook: utils.isMobileSize() ? 0.7 : 0.6,
+        triggerHook: 0.7,
         duration: utils.isMobileSize()
           ? this.getSizeAndPosData(this.$els.text3).height
           : this.getSizeAndPosData(this.$els.text3).height / 1.6,
@@ -313,7 +313,7 @@ export default (function (win, doc, $win, $doc) {
 
       this.scenes.text4 = new ScrollMagic.Scene({
         triggerElement: this.SELECTORS.SUBJECT,
-        triggerHook: utils.isMobileSize() ? 0.7 : 0.6,
+        triggerHook: utils.isMobileSize() ? 0.8 : 0.6,
         duration: utils.isMobileSize()
           ? this.getSizeAndPosData(this.$els.text4).height
           : this.getSizeAndPosData(this.$els.text4).height / 1.6,
