@@ -31,13 +31,14 @@
     @include position(relative, $z-index:1);
     display: inline-block;
     box-sizing: border-box;
-    max-width: 800px;
+    max-width: 820px;
     vertical-align: middle;
     white-space: normal;
     color: $white;
   }
 
   &__title {
+    @include cjk-word-break;
     font-size: 72px;
     font-weight: normal;
     line-height: 85px;

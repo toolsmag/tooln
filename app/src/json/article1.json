@@ -2,8 +2,8 @@
   "cover": {
     "title": "<strong>일상의 존중</strong>",
     "description": "배우이자 예능인 봉태규와 사진가 하시시박은 2014년에 처음 만났다. <br class=\"view-pc\">두 사람이 만나 넷이 된 지금, 이들의 일상에는 서로 다른 존재의 공생, <br class=\"view-pc\">함께하는 삶을 이어주는 중요한 맥락으로 존중이 자리한다.",
-    "imageURL1": "src/img/article/article1/sauce_cover.jpg",
-    "imageURL2": "src/img/article/article1/sauce_cover.jpg"
+    "imageURL1": "src/img/article/article1/sauce_1_cover.jpg",
+    "imageURL2": "src/img/article/article1/sauce_1_cover.jpg"
   },
   "related": [],
   "contents": [
@@ -49,14 +49,11 @@
       "text": "<strong>봉</strong>&nbsp&nbsp우연히 주거 공간에 관한 SBS의 다큐멘터리를 본 적 있는데, 주택에 관해서도 다뤘다. 마침 당시 살던 집의 계약 만료일을 한 달 앞둔 터라 다큐멘터리를 보고는 앞으로 살 집을 주택으로 결정하게 됐다. 이곳에서의 삶에 매우 만족한다. 이곳은 조심하고 주의해야 하는 상황들로부터 자유로워서 좋다. 생각해보면 아파트에서 살 땐 집 밖의 환경이나 상황에 무관심했다. 이곳에서는 집 안에 있지만, 날씨의 변화 등 창문 너머 집 밖의 상황을 바로바로 직접적으로 느낄 수 있다. 그리고 사실 예전부터 전원주택에 대한 호기심이 많았고, 주택에서 사는 삶을 막연히 동경했다. "
     },
     {
-      "type": "image",
-      "imageURL": "src/img/article/article1/sauce_3_image.jpg"
-    },
-    {
       "type": "gallery",
       "imageURLs": [
-        "src/img/article/article1/sauce_4_gallery_1.jpg",
-        "src/img/article/article1/sauce_4_gallery_2.jpg"
+        "src/img/article/article1/sauce_3_gallery_1.jpg",
+        "src/img/article/article1/sauce_3_gallery_2.jpg",
+        "src/img/article/article1/sauce_3_gallery_3.jpg"
       ]
     },
     {
@@ -95,8 +92,8 @@
     {
       "type": "gallery",
       "imageURLs": [
-        "src/img/article/article1/sauce_5_gallery_1.jpg",
-        "src/img/article/article1/sauce_5_gallery_2.jpg"
+        "src/img/article/article1/sauce_4_gallery_1.jpg",
+        "src/img/article/article1/sauce_4_gallery_2.jpg"
       ]
     },
     {

@@ -69,7 +69,6 @@ apis
     $(window).on('resize', function () {
       var newIsMobile = utiles.isMobileSize();
       if (isMobile !== newIsMobile) {
-        console.log('newIsMobile')
         isMobile = newIsMobile;
         $coverEl.css(
           'background-image',

@@ -1,8 +1,14 @@
 /** external module */
 import $ from 'jquery';
 
-var articleContentURL = 'src/json/' + location.search.split('&')[0].slice(1) + '.json';
-var articleListURL = 'src/json/articles.json';
+var getBaseUrl = () => {
+  var isDEV = location.host.match('github') || location.host.match('8080');
+  return !!isDEV ? '' : 'https://toolsmag.github.io/tooln/dist/';
+};
+
+var articleContentURL =
+  getBaseUrl() + 'src/json/' + location.search.split('&')[0].slice(1) + '.json';
+var articleListURL = getBaseUrl() + 'src/json/articles.json';
 
 export function getArticleList() {
   return $.ajax({ url: articleListURL, dataType: 'json' });

@@ -45,7 +45,6 @@ export default {
       this.setExpanded();
 
       if (this.$navi.height() > this.$naviItems.outerHeight()) {
-        console.log(1)
         this.hideMoreMark();
       }
     }

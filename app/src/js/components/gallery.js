@@ -2,6 +2,10 @@
 import $ from 'jquery';
 import Swiper from 'Swiper';
 
+import utiles from '../utiles'
+
+var uuid = 'a' + utiles.uuidv4();
+
 export default function gallery({ type, imageURLs }) {
   var $element = $(
     '<div class="gallery">' +
@@ -12,7 +16,7 @@ export default function gallery({ type, imageURLs }) {
       '<button type="button" class="button button--next" aria-label="다음"></button>' +
       '</div>' +
       '</div>' +
-      '<div class="gallery__pagination"></div>' +
+      '<div class="gallery__pagination ' + uuid + '"></div>' +
       '</div>',
   );
 
@@ -29,27 +33,22 @@ export function gallerySwiperInit() {
   if (!$('.gallery__inner').length) {
     return false;
   }
-
-  var $slides = $('.gallery__slides');
-
-  document.querySelectorAll('.gallery__buttons button').forEach((el) => {
-    el.addEventListener('click', () => console.log(1));
-  });
-
-  return new Swiper('.gallery__inner', {
+  
+  window.mySwiper = window.mySwiper || new Swiper('.gallery__inner', {
     wrapperClass: 'gallery__slides',
     slideClass: 'slide',
     spaceBetween: 30,
-    pagination: '.gallery__pagination',
     nextButton: '.gallery__buttons .button--next',
     prevButton: '.gallery__buttons .button--prev',
+    pagination: '.gallery__pagination.' + uuid,
     bulletClass: 'button',
     bulletActiveClass: 'current',
-    paginationClickable: true,
     paginationBulletRender: function (swiper, index, className) {
       return (
-        '<button class="' + className + '" aria-label="' + (index + 1) + ' 이미지 보기"></button>'
+        '<span class="' + className + '" aria-label="' + (index + 1) + ' 이미지 보기"></span>'
       );
     },
   });
+
+  return window.mySwiper;
 }

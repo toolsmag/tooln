@@ -58,7 +58,6 @@
 
       .label {
         font-size: 23px;
-        font-style: italic;
 
         &+.credits {
           @include margin(17px null null);
