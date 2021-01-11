@@ -126,8 +126,8 @@ module.exports = {
   devServer: isEnvProd
     ? {}
     : {
-        port: 8080,
-        open: false,
+        port: 9999,
+        open: true,
         overlay: true,
         host: '0.0.0.0',
         stats: 'errors-only',

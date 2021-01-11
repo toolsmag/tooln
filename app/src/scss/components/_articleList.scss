@@ -110,7 +110,7 @@
 
       .read {
         display: block;
-        font-size: 20px;
+        font-size: 19px;
         font-weight: bold;
         text-decoration: underline;
       }
@@ -198,7 +198,7 @@
       @include prefixer(display, box, 'webkit', 'value');
       @include prefixer(display, flex, 'ms', 'value');
       @include prefixer(align-items, center, 'ms''webkit', 'value');
-      @include margin(13px null 16px);
+      @include margin(13px null 10px);
       @include size(null, 28px);
       -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -255,7 +255,7 @@
       display: block;
       min-height: 125px;
       font-size: 30px;
-      line-height: 37.5px;
+      line-height: 47px;
 
       span {
         @include prefixer(box-shadow, (0 2px 0 0 $bggray, 0 3px 0 0 $bggray), 'webkit');

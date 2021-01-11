@@ -5,7 +5,7 @@
     "imageURL1": "src/img/article/article5/sauce_1_cover.jpg",
     "imageURL2": "src/img/article/article5/sauce_1_cover.jpg"
   },
-  "related": ["a1", "a2", "a3", "a4", "a5"],
+  "related": ["5","3","2"],
   "contents": [
     {
       "type": "intro",

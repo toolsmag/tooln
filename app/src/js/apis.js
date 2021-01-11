@@ -2,7 +2,7 @@
 import $ from 'jquery';
 
 var getBaseUrl = () => {
-  var isDEV = location.host.match('github') || location.host.match('8080');
+  var isDEV = location.host.match('github') || location.host.match('9999');
   return !!isDEV ? '' : 'https://toolsmag.github.io/tooln/dist/';
 };
 

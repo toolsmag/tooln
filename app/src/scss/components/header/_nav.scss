@@ -63,14 +63,21 @@
   }
 
   &__item {
+    @include margin($top: 12px);
     overflow: hidden;
+
+    &:first-child {
+      @include margin($top: 0);
+    }
 
     a {
       @include prefixer(transform, translate3d(0, 50%, 0));
       display: inline-block;
       font-weight: bold;
-      line-height: 1.85;
+      line-height: 1.428571;
       opacity: 0;
+
+      
 
       @include mobile {
         font-size: 6vw;

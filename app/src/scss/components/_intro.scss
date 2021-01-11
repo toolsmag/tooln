@@ -6,7 +6,7 @@
   @include size(100%);
   @include margin($contentDesktopMarginTop auto null);
   @include padding(0 $desktopBufferHorizontal);
-  max-width: 1403px;
+  max-width: 1080px;
   box-sizing: border-box;
 
 
@@ -72,8 +72,8 @@
 
     &__summary {
       @include margin($top: 42px);
-      font-size: 16px;
-      line-height: 28px;
+      font-size: 18px;
+      line-height: 1.7;
     }
   }
 }

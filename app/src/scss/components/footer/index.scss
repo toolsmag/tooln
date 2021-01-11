@@ -26,10 +26,9 @@
 
     .copy {
       display: block;
-      margin-top: 33px;
+      margin-top: 34px;
       font-family: $fontType1;
       font-size: 16px;
-      letter-spacing: -1px;
       white-space: nowrap;
     }
   }
@@ -44,7 +43,7 @@
       line-height: 32px;
 
       &.tels {
-        @include margin($top: 13px);
+        @include margin($top: 22px);
       }
     }
 
@@ -154,6 +153,10 @@
         font-size: 14px;
         letter-spacing: 0;
       }
+
+      .copy {
+        margin-top: 15px;
+      }
     }
 
     &__connects {
@@ -162,8 +165,8 @@
 
       p {
         @include margin($top:0);
-        font-size: 16px;
-        line-height: 25px;
+        font-size: 18px;
+        line-height: 1.7;
 
         &:last-child {
           @include margin($top:10px);

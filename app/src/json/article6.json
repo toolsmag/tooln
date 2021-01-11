@@ -5,21 +5,24 @@
     "imageURL1": "src/img/article/article6/sauce_1_cover.jpg",
     "imageURL2": "src/img/article/article6/sauce_1_cover.jpg"
   },
-  "related": [],
+  "related": ["4", "5", "6"],
   "contents": [
     {
       "type": "intro",
       "label": "Interview",
       "credits": {
-        "Words": "10",
+        "Words": "Danbee Bae",
         "Photography": ""
       },
       "summary": ""
     },
     {
       "type": "image",
-      "imageURL": "src/img/article/article6/sauce_2_image.jpg",
-      "caption": "<strong>양태오</strong> CEO of Teo Yang Studio, Spatial Designer"
+      "imageURL": "src/img/article/article6/sauce_2_image.jpg"
+    },
+    {
+      "type": "title",
+      "text": "<strong>양태오</strong> CEO of Teo Yang Studio, Spatial Designer"
     },
     {
       "type": "text",
@@ -27,8 +30,11 @@
     },
     {
       "type": "image",
-      "imageURL": "src/img/article/article6/sauce_3_image.jpg",
-      "caption": "<strong>김자영</strong> Co-CEO of Katalog"
+      "imageURL": "src/img/article/article6/sauce_3_image.jpg"
+    },
+    {
+      "type": "title",
+      "text": "<strong>김자영</strong> Co-CEO of Katalog"
     },
     {
       "type": "text",
@@ -36,8 +42,11 @@
     },
     {
       "type": "image",
-      "imageURL": "src/img/article/article6/sauce_4_image.jpg",
-      "caption": "<strong>정멜멜</strong> Photographer of Studio Texture On Texture"
+      "imageURL": "src/img/article/article6/sauce_4_image.jpg"
+    },
+    {
+      "type": "title",
+      "text": "<strong>정멜멜</strong> Photographer of Studio Texture On Texture"
     },
     {
       "type": "text",
@@ -45,8 +54,11 @@
     },
     {
       "type": "image",
-      "imageURL": "src/img/article/article6/sauce_5_image.png",
-      "caption": "<strong>김병기</strong> CO-CEO of FRITZ COFFEE COMPANY"
+      "imageURL": "src/img/article/article6/sauce_5_image.png"
+    },
+    {
+      "type": "title",
+      "text": "<strong>김병기</strong> CO-CEO of FRITZ COFFEE COMPANY"
     },
     {
       "type": "text",

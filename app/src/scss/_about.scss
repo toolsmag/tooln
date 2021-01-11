@@ -114,7 +114,7 @@
       position: relative;
       font-size: 22px;
       color: #323130;
-      font-weight: 600;
+      // font-weight: 600;
       line-height: 36px;
       text-indent: 70px;
       text-align: justify;
@@ -220,7 +220,7 @@
       margin-top: 40px;
       font-size: 22px;
       color: #323130;
-      // font-weight: 600;
+      font-weight: 600;
       line-height: 36px;
     }
   }
@@ -335,14 +335,14 @@
         &-sub {
           margin-top: 15px;
           font-size: 18px;
-          line-height: 26px;
+          line-height: 1.7;
         }
       }
 
       &__desc {
-        font-size: 16px;
+        font-size: 18px;
         font-weight: normal;
-        line-height: 28px;
+        line-height: 1.7;
         text-indent: initial;
 
         &+& {
@@ -403,8 +403,8 @@
 
       &__desc {
         margin-top: 15px;
-        font-size: 16px;
-        line-height: 28px;
+        font-size: 18px;
+        line-height: 1.7;
         font-weight: normal;
       }
     }
@@ -412,8 +412,8 @@
     &-stockist {
       &__item {
         margin-top: 20px;
-        font-size: 16px;
-        line-height: 28px;
+        font-size: 18px;
+        line-height: 1.7;
       }
 
       &__name {
@@ -424,9 +424,9 @@
 
       &__summary {
         margin: 20px 0 0;
-        font-size: 16px;
+        font-size: 18px;
         font-weight: normal;
-        line-height: 28px;
+        line-height: 1.7;
       }
     }
   }

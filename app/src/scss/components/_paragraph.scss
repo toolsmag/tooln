@@ -36,15 +36,19 @@
   .paragraph {
     @include margin($contentMobileMarginTop null null);
     @include padding(0 $mobileBufferHorizontal);
-    font-size: 16px;
-    line-height: 28px;
-
+    font-size: 18px;
+    line-height: 1.7;
+    word-break: break-all;
+    
+    &+.paragraph {
+      @include margin($top: 15px);
+    }
     &+.paragraph--title {
-      @include margin($top: 34px);
+      @include margin($top: 50px);
     }
 
     &--title+.paragraph {
-      @include margin($top: 2px);
+      @include margin($top: 15px);
     }
 
     &--caption {

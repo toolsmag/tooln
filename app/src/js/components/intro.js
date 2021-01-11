@@ -16,14 +16,17 @@ export default function intro({ type, label, credits, summary }) {
   );
 
   $element.find('.label span').html(label);
-  $element.find('.intro__summary').html(summary);
+  
   $element.find('.credits').html(
     Object.keys(credits).map(function (key) {
       return credits[key]
-        ? $('<p><strong>' + key + ' by</strong><span>' + credits[key] + '</span></p>')
-        : '';
+      ? $('<p><strong>' + key + ' by</strong><span>' + credits[key] + '</span></p>')
+      : '';
     }),
-  );
+    );
+  summary 
+    ? $element.find('.intro__summary').html(summary)
+    : $element.remove('.intro__summary');
 
   return $element;
 }
