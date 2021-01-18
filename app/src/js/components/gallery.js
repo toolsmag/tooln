@@ -4,20 +4,18 @@ import Swiper from 'Swiper';
 
 import utiles from '../utiles'
 
-var uuid = 'a' + utiles.uuidv4();
-
 export default function gallery({ type, imageURLs }) {
   var $element = $(
     '<div class="gallery">' +
       '<div class="gallery__inner">' +
-      '<ul class="gallery__slides"></ul>' +
-      '<div class="gallery__buttons">' +
-      '<button type="button" class="button button--prev" aria-label="이전"></button>' +
-      '<button type="button" class="button button--next" aria-label="다음"></button>' +
+        '<ul class="gallery__slides"></ul>' +
+        '<div class="gallery__buttons">' +
+          '<button type="button" class="button button--prev" aria-label="이전"></button>' +
+          '<button type="button" class="button button--next" aria-label="다음"></button>' +
+        '</div>' +
+        '<div class="gallery__pagination"></div>' +
       '</div>' +
-      '</div>' +
-      '<div class="gallery__pagination ' + uuid + '"></div>' +
-      '</div>',
+    '</div>',
   );
 
   imageURLs.forEach(function (url) {
@@ -40,7 +38,8 @@ export function gallerySwiperInit() {
     spaceBetween: 30,
     nextButton: '.gallery__buttons .button--next',
     prevButton: '.gallery__buttons .button--prev',
-    pagination: '.gallery__pagination.' + uuid,
+    pagination: '.gallery__pagination',
+    paginationClickable: true,
     bulletClass: 'button',
     bulletActiveClass: 'current',
     paginationBulletRender: function (swiper, index, className) {

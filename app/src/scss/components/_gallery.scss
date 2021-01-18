@@ -41,7 +41,7 @@
       top: 0;
       z-index: 1;
       width: 50%;
-      height: 100%;
+      height: calc(100% - 82px);
       content: '';
 
       &--prev {
@@ -67,6 +67,7 @@
       display: inline-block;
       border-radius: 50%;
       background: #b8b8b2;
+      cursor: pointer;
 
       &:first-child {
         margin-left: 0;
