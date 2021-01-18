@@ -9,7 +9,7 @@
     @include prefixer(display, box, 'webkit', 'value');
     @include prefixer(display, flex, 'ms', 'value');
     @include prefixer(flex-wrap, wrap, 'ms''webkit');
-    @include prefixer(box-shadow, (inset 0 -1px 0 0 black, inset 0 0 0 0 black), 'ms''webkit');
+    @include prefixer(box-shadow, (inset 0 -1px 0 0 black, inset 0 0 0 0 black, 0 -1px 0 0 black, inset 0 0 0 0 black), 'ms''webkit');
     @include margin(null auto);
     max-width: $max-size;
   }
@@ -92,7 +92,7 @@
       display: none;
       overflow: hidden;
       box-sizing: border-box;
-      background: $bggray;
+      // background: $bggray;
       font-size: 20px;
 
       .inner {
@@ -118,6 +118,8 @@
       &--type1 {
         @include padding(25px 0 15px);
         border-bottom: 1px solid black;
+        // background: url($bg_thumb) #fdfbf5 no-repeat 0 0;
+        // background-size: 100% auto;
         text-align: center;
 
         &:before,
@@ -126,7 +128,7 @@
           @include size(1px, 150%);
           display: block;
           background: $black;
-          content: "";
+          // content: "";
         }
 
         &:before {
@@ -182,6 +184,13 @@
 
       &:hover,
       &:focus {
+        .image--type1 {
+          background: url($bg_thumb) #fdfbf5 no-repeat 0 0;
+          background-size: 100% auto;
+          img {
+            opacity: 0;
+          }
+        }
         .desc {
           display: block;
         }
@@ -317,6 +326,14 @@
     &[data-expanded=true] {
       .article__thumb:after {
         display: block;
+      }
+
+      .image--type1 {
+        background: url($bg_m_thumb) #fdfbf5 no-repeat 0 0;
+        background-size: 100% auto;
+        img {
+          opacity: 0;
+        }
       }
 
       .desc {

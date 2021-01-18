@@ -26,7 +26,7 @@ function articleThumbnail({ type, link, description, imageURL }) {
   return $(
     '<span class="article__thumb">' + 
       '<a href="' + link + '">' + 
-        '<span class="image"><img src="' + imageURL + '"/></span>' +
+        '<span class="image '+ ('image--' + (type || 'type1')) + '"><img src="' + imageURL + '"/></span>' +
         '<span class="desc ' + ('desc--' + (type || 'type1')) + '">' +
           '<span class="inner">' +
           '<span class="text">'+ description +'</span>' +
