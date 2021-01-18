@@ -3,6 +3,8 @@ import $ from 'jquery';
 
 /** internal module */
 import utils from '../utiles';
+import { getNavList } from '../apis';
+import navi from '../components/navi';
 
 export default {
   // 초기 네비게이션 확장여부
@@ -19,8 +21,16 @@ export default {
     moreMark: '.js-header-more-mark',
   },
   init: function () {
-    this.getElements();
-    this.bindEvents();
+    var that = this;
+
+    getNavList().done(function ({ list }) {
+      list && navi(list);
+
+      that.getElements();
+      that.bindEvents();
+    });
+
+    
   },
   getElements: function () {
     this.$container = $(this.selector.header);

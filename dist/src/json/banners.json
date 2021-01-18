@@ -1,0 +1,39 @@
+{
+  "list": [
+    {
+      "link": "./article.html?article4",
+      "imageURL": "src/img/article/article1/banner.jpg",
+      "imageMobileURL": "src/img/article/article1/thumb.jpg",
+      "label": "Article",
+      "title": "일상의 존중, 봉태규와 하시시박",
+      "description": "배우이자 예능인 봉태규와 사진가 하시시박은 2014년에 처음 만났다. 두 사람이 만나 넷이 된 지금, 이들의 일상에는 서로 다른 존재의 공생, 함께하는 삶을 이어주는 중요한 맥락으로 존중이 자리한다.",
+      "credits": {
+        "Editor": "Danbee Bae"
+      }
+    },
+    {
+      "type": "type1",
+      "link": "./article.html?article5",
+      "imageURL": "src/img/article/article2/banner.jpg",
+      "imageMobileURL": "src/img/article/article2/thumb.jpg",
+      "label": "Article",
+      "title": "비누의 요원한 얼굴",
+      "description": "닳고 마른 비누가 희고 깨끗한 배경 가운데 누워 있다. 얼마나 오래된 비누인지 짐작하기 어려운 것은 이 배경 때문이다. 언제나처럼, 비누는 흘러간 생을 담담히 보내고 내일의 미지를 기다리는 중이다.",
+      "credits": {
+        "Editor": "Danbee Bae"
+      }
+    },
+    {
+      "type": "type2",
+      "link": "./article.html?article6",
+      "imageURL": "src/img/article/article3/banner.jpg",
+      "imageMobileURL": "src/img/article/article3/thumb.jpg",
+      "label": "Article",
+      "title": "대호탕의 시간",
+      "description": "서울특별시 강서구 월정로 30길 50. 1969년에 문을연 이래, 50년은 마치 씻겨 내려가는 물처럼 빠르게 흘렀다. 세월의 무심함과는 달리 이곳을 지나쳐 간 사람 수는 셀 수 없을 정도다. 누군가의 걸음은 뜸해지거나 혹은 사라졌지만, 더러움을 씻어낸 이들의 말간 뒷모습은 오래 기억할 만하다.",
+      "credits": {
+        "Editor": "Danbee Bae"
+      }
+    }
+  ]
+}

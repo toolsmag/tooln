@@ -6,8 +6,9 @@ var getBaseUrl = () => {
   return !!isDEV ? '' : 'https://toolsmag.github.io/tooln/dist/';
 };
 
-var articleContentURL =
-  getBaseUrl() + 'src/json/' + location.search.split('&')[0].slice(1) + '.json';
+var naviListURL = getBaseUrl() + 'src/json/navi.json';
+var bannerListURL = getBaseUrl() + 'src/json/banners.json';
+var articleContentURL = getBaseUrl() + 'src/json/' + location.search.split('&')[0].slice(1) + '.json';
 var articleListURL = getBaseUrl() + 'src/json/articles.json';
 
 export function getArticleList() {
@@ -16,4 +17,12 @@ export function getArticleList() {
 
 export function getArticleContent() {
   return $.ajax({ url: articleContentURL, dataType: 'json' });
+}
+
+export function getNavList() {
+  return $.ajax({ url: naviListURL, dataType: 'json' });
+}
+
+export function getBannerList() {
+  return $.ajax({ url: bannerListURL, dataType: 'json' });
 }
