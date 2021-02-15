@@ -20,7 +20,7 @@ const HtmlWebpackPlugins = Object.entries({
 }).map(
   ([key, value]) =>
     new HtmlWebpackPlugin({
-      minify: false,
+      minify: true,
       template: `./app/${key}.html`,
       filename: value,
       chunks: [chunksName, key],
@@ -57,6 +57,10 @@ module.exports = {
     }),
     new CopyPlugin({
       patterns: [
+        {
+          from: path.resolve(__dirname, 'public/'),
+          to: "./",
+        },
         {
           from: path.resolve(__dirname, 'app/src/json'),
           to: "src/json/",
